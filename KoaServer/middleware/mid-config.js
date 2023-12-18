@@ -2,6 +2,7 @@ const compose = require("koa-compose");
 const chalk = require("chalk");
 
 //Logger
+// 这个函数可以用于在某些场景中对字符串进行转义，以避免特殊字符引起的问题。在你的代码中，它被用来对查询字符串中的特殊字符进行转义，确保查询字符串不会影响到后续的处理逻辑。
 let escAddFun = (value) => {
   let valueSplit = value.split("");
   let valueSplitIndex = [];
@@ -47,6 +48,7 @@ async function logger(ctx, next) {
 
 async function searchChange(ctx, next) {
   if (ctx.query.search) {
+    // 字符转义
     ctx.query.search = escAddFun(ctx.query.search);
   }
   await next();
