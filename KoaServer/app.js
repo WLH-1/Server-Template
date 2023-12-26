@@ -2,6 +2,8 @@ const Koa = require('koa');
 const Key = require("./configuration/env")();
 const MidConfig = require("./middleware/mid-config");
 const registerRouter = require("./api/index");
+const redis = require("redis");
+
 
 const app = new Koa();
 const port = Key.port;
@@ -12,8 +14,13 @@ let {
     conn,
 } = DbConn();
 
+let client = redis.createClient(Key.redisOption.port, Key.redisOption.host);
+client.on("error", function (err) {
+    console.log("Error " + err);
+});
 
 module.exports = {
+    client,
     Global,
     conn,
 };
