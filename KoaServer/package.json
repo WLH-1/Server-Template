@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
-    "glob": "^10.3.10",
+    "glob": "^7.1.4",
     "koa": "^2.14.2",
     "koa-bodyparser": "^4.4.1",
     "koa-compose": "^4.1.0",

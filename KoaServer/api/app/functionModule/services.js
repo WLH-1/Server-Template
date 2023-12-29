@@ -20,8 +20,8 @@ module.exports = {
         const newData = await getRedies("data");
         return createResponse(
             Code.OK,
-            "setRedis成功",
-            { data: newData }
+            "getRedis成功",
+            { data: JSON.parse(newData)}
         );
     },
 };
