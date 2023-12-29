@@ -11,6 +11,7 @@ const port = Key.port;
 const DbConn = require("./db/DbConn");
 let {
     Global,
+    User,
     conn,
 } = DbConn();
 
@@ -22,6 +23,7 @@ client.on("error", function (err) {
 module.exports = {
     client,
     Global,
+    User,
     conn,
 };
 
