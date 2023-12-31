@@ -1,13 +1,14 @@
 const { createResponse } = require("../../../util/response.util");
 const { getRedies, setRedies } = require("../../../util/redies.util");
 const CryptoJS = require("crypto-js")
+const jwt = require("jsonwebtoken")
 const { User } = require("../../../app")
 const Key = require("../../../configuration/env")();
 const Code = require("../../../util/code.util");
 module.exports = {
     login: async (body) => {
-        let { username, password } = body
-        let ifExit = await User.findOne({ username })
+        let {username,password } = body
+        let ifExit = await User.findOne({ username }).lean()
         if (!ifExit) {
             return createResponse(
                 Code.CONFLICT,
@@ -21,9 +22,20 @@ module.exports = {
                 "密码错误"
             );
         }
+
+        let payload = {
+            username: ifExit.username,
+            tel: ifExit.tel,
+            name: ifExit.name,
+            id:ifExit._id
+        }
+
+        let token = jwt.sign({ ...payload }, Key.jwtSecret, { expiresIn:'100h'})
+
         return createResponse(
             Code.OK,
-            "登录成功"
+            "登录成功",
+            { token }
         );
     },
     register: async (body) => {
