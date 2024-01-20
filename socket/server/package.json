@@ -1,0 +1,35 @@
+{
+  "name": "sokcet",
+  "version": "1.0.0",
+  "description": "socket",
+  "main": "index.js",
+  "scripts": {
+    "start": "set NODE_ENV=dev&&nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiang001/koa2-server-template.git"
+  },
+  "keywords": [],
+  "author": "hta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qiang001/koa2-server-template/issues"
+  },
+  "homepage": "https://github.com/qiang001/koa2-server-template#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "glob": "^7.1.4",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa2-cors": "^2.0.6",
+    "mongoose": "^5.5.7",
+    "request-promise": "^4.2.6",
+    "socket.io": "^3.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

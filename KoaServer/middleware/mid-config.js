@@ -5,7 +5,8 @@ const Key = require("../configuration/env")();
 
 // token解码
 function jwtAuth(ctx, next) {
-  if (ctx.request.url == '/app/Authorization/login') {
+  let whiteList = ["/app/Authorization/login", "/app/Authorization/register"];
+  if (whiteList.includes(ctx.request.url)) {
     return next();
   }
   let token = ctx.header.authorization;
