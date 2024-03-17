@@ -134,6 +134,21 @@ export default {
       ]
     };
   },
+  //  mounted() {
+  //   // 监听滚动事件
+  //   window.addEventListener('scroll', this.handleScroll);
+  // },
+  // destroyed() {
+  //   // 在组件销毁时移除滚动事件监听器
+  //   window.removeEventListener('scroll', this.handleScroll);
+  // },
+  // methods: {
+  //   handleScroll() {
+  //     // 处理滚动事件
+  //     console.log('滚动事件触发了！');
+  //     // 在这里执行其他操作，根据需要更新页面内容或执行特定的逻辑
+  //   }
+  // }
   methods: {
     navClick(index, name) {
       this.navIndex = index;
@@ -155,13 +170,18 @@ export default {
 #header {
   background: #f4f4f4;
   transition: all ease 0.6s;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  left: 0;
+  right: 0;
 }
 #header .header-top {
   height: 50px;
   color: #fff;
   font-size: 12px;
   line-height: 50px;
-  background: #474747;
+  background: #474747
 }
 /* 顶部的图标 */
 #header .header-top span {
