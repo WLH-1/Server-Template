@@ -67,6 +67,7 @@ export default {
                     id: id
                 }
             })
+            this.$emit("toTop")
         }
     }
 }

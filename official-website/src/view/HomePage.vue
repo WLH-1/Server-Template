@@ -329,7 +329,7 @@ export default {
       animateClass: 'animated',
       offset: 0,
       mobile: true,
-      live: true
+      live: true,
     })
     wow.init();
   }
@@ -376,6 +376,11 @@ export default {
   font-size: 20px;
   margin-top: 1%;
   font-weight: 700;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  width: 30px;
+  height: 20px;
 }
 /* 大数据管理系统 */
 #bigData {

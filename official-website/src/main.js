@@ -8,9 +8,12 @@ import router from './router'
 
 /* axios */
 import axios from './api'
+import store from "@/store/index.js";
 import api from './api/api'
 Vue.prototype.http = axios;
 Vue.prototype.api = api;
+
+Vue.prototype.$store = store;
 
 /* swiper */
 import 'swiper/dist/css/swiper.min.css';
@@ -56,6 +59,7 @@ router.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

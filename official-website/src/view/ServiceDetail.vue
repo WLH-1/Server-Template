@@ -2,8 +2,8 @@
   <div id="ServiceDetail">
     <div class="banner container-fuild text-center">相关服务</div>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-3" id="myScrollspy">
+      <div class="row center-block">
+        <!-- <div class="col-xs-12 col-sm-12 col-md-3" id="myScrollspy">
           <ul class="nav nav-tabs nav-stacked center-block" id="myNav">
             <p>特色服务</p>
             <li
@@ -14,12 +14,12 @@
               <a :href="'#'+item.id">{{item.title}}</a>
             </li>
           </ul>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-9 content  wow zoomIn">
-          <div class="content-block" v-for="(item,index) in serviceContentList" :key="index">
+        </div> -->
+        <div class="col-xs-12 col-sm-12 content  wow zoomIn">
+          <div class="content-block" v-for="(item, index) in serviceContentList" :key="index">
             <h2 :id="item.id">
-              {{item.title}}
-              <small>/ {{item.eng_title}}</small>
+              {{ item.title }}
+              <small>/ {{ item.eng_title }}</small>
             </h2>
             <div v-html="item.content"></div>
           </div>
@@ -88,12 +88,7 @@ export default {
   mounted() {
     this.id = this.$route.params.id;
     var top = document.getElementById(this.id).offsetTop;
-    $(window).scrollTop(top + 300);
-    $("#myNav").affix({
-      offset: {
-        top: 300
-      }
-    });
+    $(window).scrollTop(top + 100);
     var wow = new WOW();
     wow.init();
   }
@@ -111,6 +106,7 @@ export default {
   background-attachment: scroll;
   background-position: center center;
 }
+
 ul.nav-tabs {
   width: 200px;
   margin-top: 40px;
@@ -120,11 +116,13 @@ ul.nav-tabs {
   border: 1px solid #474747;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
 }
+
 ul.nav-tabs li {
   text-align: center;
   margin: 0;
   border-top: 1px solid #474747;
 }
+
 ul.nav-tabs p {
   color: #fff;
   font-size: 18px;
@@ -134,34 +132,41 @@ ul.nav-tabs p {
   margin: 0;
   padding: 10px 0;
 }
+
 ul.nav-tabs li:first-child {
   border-top: none;
 }
+
 ul.nav-tabs li a {
   margin: 0;
   padding: 8px 16px;
   border-radius: 0;
 }
+
 ul.nav-tabs li.active a,
 ul.nav-tabs li.active a:hover {
   color: #fff;
   background: #474747;
   border: 1px solid #474747;
 }
+
 ul.nav-tabs li:first-child a {
   border-radius: 4px 4px 0 0;
 }
+
 ul.nav-tabs li:last-child a {
   border-radius: 0 0 4px 4px;
 }
+
 ul.nav-tabs.affix {
   top: 30px;
 }
+
 .content-block {
   margin: 50px 0;
 }
-.content-block > h2 {
+
+.content-block>h2 {
   padding: 20px 0;
   border-bottom: 1px solid #ccc;
-}
-</style>
+}</style>
