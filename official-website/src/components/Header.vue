@@ -27,7 +27,7 @@
           @click="navClick(index, item.name)">
           <router-link :to="item.path">
             {{ item.name }}
-            <span v-if="item.children.length > 0" class="glyphicon glyphicon-menu-down"></span>
+            <span v-if="item.children.length > 0" class="glyphicon glyphicon-align-justify"></span>
             <i class="underline"></i>
           </router-link>
           <dl v-if="item.children.length > 0">
@@ -40,14 +40,16 @@
     </div>
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
-      <div class="header-nav-m-logo">
-        <img class="center-block" src="@/assets/img/logo_black.png" alt="logo">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 50px;">
+        <div class="header-nav-m-logo">
+          <img class="center-block" src="@/assets/img/logo_black.png" alt="logo">
+        </div>
+        <div  data-toggle="collapse" data-target="#menu" @click="menuClick">
+            <span :class="menuClass"></span>
+        </div>
       </div>
       <!-- 导航栏 -->
       <div class="header-nav-m-menu text-center">
-        <div class="header-nav-m-menu-wrapper" data-toggle="collapse" data-target="#menu" @click="menuClick">
-          <span :class="menuClass"></span>
-        </div>
         <!-- 导航内容 -->
         <ul id="menu" class="header-nav-m-wrapper collapse">
           <li v-for="(item, index) in navList" :key="index" :class="index == navIndex ? 'active' : ''"
@@ -72,7 +74,7 @@ export default {
     return {
       navIndex: sessionStorage.getItem('navIndex') ? sessionStorage.getItem('navIndex') : 0,
       menuName: "首页",
-      menuClass: "glyphicon glyphicon-menu-down",
+      menuClass: "glyphicon glyphicon-align-justify",
       navList: [
         {
           name: "首页",
@@ -163,10 +165,10 @@ export default {
       this.$emit('toTop')
     },
     menuClick() {
-      if (this.menuClass == "glyphicon glyphicon-menu-down") {
-        this.menuClass = "glyphicon glyphicon-menu-up";
+      if (this.menuClass == "glyphicon glyphicon-align-justify") {
+        this.menuClass = "glyphicon glyphicon-remove";
       } else {
-        this.menuClass = "glyphicon glyphicon-menu-down";
+        this.menuClass = "glyphicon glyphicon-align-justify";
       }
     }
   }
@@ -349,7 +351,6 @@ export default {
   /* 导航栏  菜单容器 */
   #header .header-nav-m .header-nav-m-menu {
     color: #fff;
-    height: 50px;
     font-size: 20px;
     line-height: 50px;
     background: #474747;
@@ -372,7 +373,6 @@ export default {
   /* 导航栏 */
   #header .header-nav-m .header-nav-m-wrapper {
     position: absolute;
-    top: 50px;
     left: 0;
     width: 100%;
     background: #474747;

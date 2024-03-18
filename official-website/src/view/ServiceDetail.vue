@@ -87,10 +87,14 @@ export default {
   },
   mounted() {
     this.id = this.$route.params.id;
-    var top = document.getElementById(this.id).offsetTop;
-    $(window).scrollTop(top + 100);
-    var wow = new WOW();
-    wow.init();
+    this.$nextTick(() => {
+      var top = document.getElementById(this.id);
+      if (top) {
+        $(window).scrollTop(top.offsetTop + 100);
+      }
+      var wow = new WOW();
+      wow.init();
+    })
   }
 };
 </script>
