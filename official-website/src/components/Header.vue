@@ -27,7 +27,7 @@
           @click="navClick(index, item.name)">
           <router-link :to="item.path">
             {{ item.name }}
-            <span v-if="item.children.length > 0" class="glyphicon glyphicon-align-justify"></span>
+            <span v-if="item.children.length > 0" class="glyphicon glyphicon-chevron-up"></span>
             <i class="underline"></i>
           </router-link>
           <dl v-if="item.children.length > 0">
