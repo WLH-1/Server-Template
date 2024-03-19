@@ -4,6 +4,7 @@
   </div>
 </template>
 <script>
+import store from '@/store/index.js';
 export default {
   name: "GoTop",
   data() {
@@ -19,7 +20,8 @@ export default {
         if (currentScroll > 0) {
           window.requestAnimationFrame(smoothscroll);
           window.scrollTo(0, currentScroll - currentScroll / 10);
-        }
+          store.commit('setScrollType', currentScroll<110 && currentScroll > 1 ? 0 : -currentScroll);
+        } 
       })();
     }
   }

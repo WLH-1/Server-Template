@@ -1,7 +1,7 @@
 <template>
   <div @wheel="handleWheel" id="app">
     <Header @toTop="GoTop"></Header>
-    <router-view @toTop="GoTop"/>
+    <router-view/>
     <Footer></Footer>
     <GoTop></GoTop>
   </div>
@@ -31,22 +31,13 @@ export default {
           document.documentElement.scrollTop || document.body.scrollTop;
         if (currentScroll > 0) {
           window.requestAnimationFrame(smoothscroll);
-          window.scrollTo(0,0);
+          window.scrollTo(0, 0);
         }
       })();
     },
     handleWheel(event) {
       if (event) {
-        if (event.deltaY > 0) {
-          // 向下滚动
-          this.$store.commit('setScrollType', event.deltaY);
-        } else if (event.deltaY < 0) {
-          // 向上滚动
-          this.$store.commit('setScrollType', event.deltaY);
-        } else {
-          // 没有滚动
-          this.$store.commit('setScrollType', event.deltaY);
-        }
+        this.$store.commit('setScrollType', event.deltaY);
       }
     },
     navClick(index, name) {
