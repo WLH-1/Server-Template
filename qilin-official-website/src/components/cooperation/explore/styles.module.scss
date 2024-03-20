@@ -1,0 +1,40 @@
+.banner{
+    background: url(./images/bg.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @apply h-[495px] min-h-[495px]
+}
+.content{
+    @apply flex h-[100%] w-full flex-col items-center justify-center md:mt-[60px]
+}
+.title{
+    @apply text-[42px] font-[600] text-[#fff] mb-[41px] md:mb-0
+}
+.text{
+    @apply md:text-[32px] font-[500] text-[#fff]  md:mt-[49px]  text-[26px]
+}
+.btn{
+    @apply md:mt-[80px] md:mb-[88px] mt-[72px]
+}
+.btn_text{
+    @apply rounded-md bg-[#fff] md:px-[34px] md:py-[17px]  px-[30px] py-[16px] md:text-[20px] text-[26px] font-[500] text-[#ed3838]
+}
+@media screen and (min-width:768.1px) and (max-width:1440px){
+    .banner{
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @apply h-[495px] w-full
+    }
+}
+
+@media screen and (max-width:768px){
+    .banner{
+        background: url(./images/bg-m.png);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @apply h-[452px] w-full
+    }
+}

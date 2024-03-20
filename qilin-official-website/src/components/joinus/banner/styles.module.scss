@@ -1,0 +1,31 @@
+.banner_pc {
+    background-image: url("./images/banner-bg.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center center;
+    @apply h-[280px]  mt-[0px] ;
+}
+
+.banner_m{
+  background-image: url("./images/banner-bg-m.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position:center center;
+  @apply h-[360px] mt-[-114px];
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px)  {
+  .banner_pc{
+    background-image: url("./images/banner-bg-m.png");
+    height: 500px;
+  }
+}
+
+@media screen{
+  .banner_pc {
+    background-size: cover;
+    background-position: center top;
+  }
+}
+
+

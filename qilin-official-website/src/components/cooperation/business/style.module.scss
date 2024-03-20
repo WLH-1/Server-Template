@@ -1,0 +1,50 @@
+.right_content1,.right_content2{
+    @apply flex flex-col justify-between pl-[20px] pt-[56px] md:min-h-[289px] md:w-[60%]  md:py-[25px] w-full ml-[32px] md:ml-0 md:pl-0
+}
+.title{
+    @apply md:w-full w-[64%] md:pb-[49px] md:pt-[28px] text-center text-[42px] font-[700] 
+    md:leading-[51px] text-[#333] leading-[54px] pt-[56px] pb-[32px]  md:static top-[440px]   
+}
+
+.pm5_content{
+    @apply w-full flex items-start
+}
+
+.pm5_img{
+    @apply w-[24px] h-[24px] mr-[10px] translate-y-[10px] md:translate-y-[4px]
+}
+
+.right2_text{
+    @apply md:pb-[16px] md:pt-[8px] text-[26px] leading-[44px] text-[#333] md:text-[20px] md:leading-[31px] md:mb-[32px] mb-[68px] md:mt-[90px] 
+}
+
+.right2_text2{
+    @apply text-[26px] leading-[44px] text-[#333]  md:text-[20px] md:leading-[31px] mb-[72px]
+}
+
+@media screen and (min-width:926.1px) and (max-width:1120px){
+   .right_content2 .right2_text2{
+        margin-bottom: 32px !important;
+    }
+}
+@media screen and (min-width:769x) and (max-width:1024.9px){
+    .right_content2 .right2_text2{
+         margin-bottom: 0px !important;
+         margin-top: 0px !important;
+     }
+ }
+
+// 定义动画---右图左文本 .right_contanier依次进入
+// @keyframes slide-in-title {
+//     from {
+//       transform: translateY(100%);
+//     }
+//     to {
+//       transform: translateY(0);
+//     }
+// }
+//   /* 应用动画 */
+//   .title {
+//     animation:slide-in-title  0.8s ease-out;
+//   }
+ 

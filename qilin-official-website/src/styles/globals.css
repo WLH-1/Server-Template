@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+@import 'animate.css';
+
+.custom-pagination > .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #d8d8d8 !important;
+}
+.custom-pagination > .swiper-pagination-bullet-active {
+  background: #ed3838 !important;
+}
+@media (max-width: 768.1px) {
+  .custom-pagination > .swiper-pagination-bullet {
+    width: 17%;
+    height: 12px;
+    border-radius: 12px;
+  }
+}
+
+.ebuy-container {
+  @apply mx-auto w-full max-w-[1744px] px-[32px] md:px-[64px] grid gap-[10px] lg:px-[120px];
+  grid-template-columns: repeat(24, minmax(0, 1fr))
+}
+
+.ebuy-container-no-px{
+   @apply mx-auto w-full max-w-[1264px]  grid gap-[10px] 3xl:max-w-[1600px];
+  grid-template-columns: repeat(24, minmax(0, 1fr))
+}
+
+.ebuy-container-no-grid {
+  @apply mx-auto w-full max-w-[1264px] px-[32px];
+}
+
+
+html, body{
+  @apply w-full h-full text-[16px];
+}
+
+body {
+  @apply overflow-x-hidden overflow-y-auto;
+}
+
+:root{
+  --react-international-phone-height:56px;
+  --react-international-phone-background-color:#fff;
+  ----react-international-phone-font-size:24px;
+  --react-international-phone-border-color:#ddd;
+  --react-international-phone-font-size:24px;
+  --react-international-phone-dropdown-item-font-size:18px
+}
+.react-international-phone-country-selector-button{
+ width: 88px;
+
+}
+.react-international-phone-country-selector-button img{
+  width: 42px;
+  margin-right: 14px;
+}
+.react-international-phone-country-selector-dropdown{
+  top:56px;
+  max-height: 300px;
+  max-width: 600px;
+}
+.react-international-phone-country-selector-dropdown li:nth-child(3){
+
+  border-bottom:2px solid rgb(187, 187, 187) ;
+}
+
+/* 动画 */
+/* 上移动画 */
+@keyframes moveUp {
+  from {
+    opacity: 0;
+    transform :translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform :translateY(0%);
+  }
+}
+
+/* 下移动画 */
+@keyframes moveDown {
+  from {
+    opacity: 0;
+    transform :translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform :translateY(0%);
+  }
+}
+@keyframes noMove {
+  from {
+    opacity: 0;
+    transform :translateX(0%);
+  }
+  to {
+    opacity: 1;
+    transform :translateX(0%);
+  }
+}
+
+@keyframes opacitiChange {
+  from {
+    opacity: 0;
+
+  }
+  to {
+    opacity: 1 ;
+
+  }
+}
+
+@keyframes moveRight{
+   from {
+    opacity: 0;
+    transform :translateX(-25%);
+  }
+  to {
+    opacity: 1;
+    transform :translateX(0%);
+  }
+}
+
+
+@keyframes moveLeft{
+   from {
+    opacity: 0;
+    transform :translateX(25%);
+  }
+  to {
+    opacity: 1;
+    transform :translateX(0%);
+  }
+}
+
+/* 提示动画 */
+@keyframes moveDownFoot{
+   from {
+    opacity: 1;
+
+  }
+  to {
+    opacity: 0;
+
+  }
+}
+@keyframes moveUpFoot {
+      from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* 鼠标hover动画 */
+@keyframes moveLeftInBusiness{
+   from {
+    opacity: .6;
+    transform :translateX(30%);
+  }
+  to {
+    opacity: 1;
+    transform :translateY(0);
+  }
+}
+
+.head1{
+   opacity: 0;
+  animation:moveUp 1s 1s 1 ease forwards;
+}
+.head2{
+   opacity: 0;
+   animation:moveUp 1s 1s 1 ease forwards;
+}
+.head3{
+  opacity: 0;
+   animation:moveUp 0.6s 1.6s 1 ease forwards;
+}
+
+.benifit1{
+   opacity: 0;
+  animation:moveRight 2s 0s 1 ease forwards;
+}
+.benifit2{
+   opacity: 0;
+  /* animation:moveUp 1s 0s 1 ease forwards; */
+   animation:opacitiChange 1s 0s 1 ease forwards;
+}
+.business0{
+   opacity: 0;
+   animation:opacitiChange .4s .4s 1 ease forwards;
+}
+.business1{
+   opacity: 0;
+  animation:moveRight .8s 0s 1 ease forwards;
+}
+.business2{
+   opacity: 0;
+  animation:moveLeftInBusiness 1s 0s 1 ease forwards;
+}
+/* 标题动画 */
+.partner1{
+  opacity: 0;
+   animation:moveUp .4s  1 ease forwards;
+}
+.partner2{
+  opacity: 0;
+   animation:moveUp .8s  1 ease forwards;
+}
+.evaluation1{
+  opacity: 0;
+   animation:moveUp .4s 0.1s 1 ease forwards;
+}
+.evaluation2{
+  opacity: 0;
+   animation:moveUp .8s 0.1s 1 ease forwards;
+}
+
+.location1{
+  opacity: 0;
+   animation:moveUp .4s 0.1s 1 ease forwards;
+}
+.location2{
+  opacity: 0;
+   animation:moveUp 1s 0.1s 1 ease forwards;
+}
+
+.footerattentionIn{
+    opacity: 0;
+   animation:moveUpFoot 1s 0s 1 ease forwards;
+}
+.footerattentionOut{
+    opacity: 0;
+   animation:moveDownFoot 0.5s 0s 1 ease forwards;
+}
+
+.leftMove{
+  opacity: 0;
+  animation:moveLeft 0.5s 0s 1 linear forwards;
+}
+.rightMove{
+  opacity: 0;
+  animation:moveRight .5s 0s 1 linear forwards;
+}
+.topMove{
+  opacity: 0;
+   animation:moveUp .5s 0s 1 linear forwards;
+}
+.topMove1{
+  opacity: 0;
+   animation:moveUp .5s 0.5s 1 linear forwards;
+}
+.topMove2{
+  opacity: 0;
+   animation:moveUp .5s .6s 1 linear forwards;
+}
+
+.no{
+  opacity: 0;
+  animation:noMove .1s 0s 1 linear forwards;
+}

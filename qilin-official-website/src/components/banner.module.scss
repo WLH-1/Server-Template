@@ -1,0 +1,12 @@
+.slogan_content{
+    @apply h-full flex-col items-center justify-center text-white md:items-start mt-[54px] md:mt-0;
+}
+
+.slogan1{
+    @apply  w-[40%] whitespace-pre-wrap text-center text-[44px] font-[600] leading-[62px] tracking-[4px] first-letter:mb-[9px]  md:pb-0  md:text-[50px] md:leading-[70px] ;
+}
+
+.slogan2{
+    @apply mb-[22px] w-[40%] whitespace-pre-wrap text-center text-[44px] font-[600] leading-[62px] first-letter:mb-[9px]  md:pb-0  md:text-[40px] md:leading-[70px] md:mb-0;
+}
+

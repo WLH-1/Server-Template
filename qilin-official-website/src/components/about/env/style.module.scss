@@ -1,0 +1,39 @@
+.box{
+@apply  h-auto rounded-lg overflow-hidden ;
+
+}
+
+.emptyBox{
+  background: linear-gradient(45deg, #E42F2F 0%, #FEA190 100%);
+border-radius: 8px;
+}
+
+// .box:hover{
+
+
+// }
+
+.container{
+  display: grid;
+grid-template-columns: 32% 32% 32%;
+  grid-template-rows: 1fr 1fr;
+  justify-content: space-between;
+  grid-row-gap:72px
+
+}
+
+.phoneContainer{
+  display: grid;
+grid-template-columns: 48% 48%;
+
+  justify-content: space-between;
+  grid-row-gap:32px
+}
+
+.scale{
+  width: 100%;
+ transition: all 0.4s ease;
+}
+.scale:hover{
+ transform: scale(1.1);
+}

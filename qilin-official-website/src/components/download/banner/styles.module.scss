@@ -1,0 +1,172 @@
+.ebuy_container {
+    @apply mx-auto w-full max-w-[1744px] px-[32px] md:px-[64px] grid gap-[10px] lg:px-[120px];
+    grid-template-columns: repeat(24, minmax(0, 1fr))
+  }
+.banner{
+    background: url('./images/bg.jpg');
+    background-size:100% 100%;
+    @apply md:h-[600px] h-full md:bg-center md:bg-repeat z-0;
+}
+
+.content{
+    @apply flex-col pb-[25px] md:flex md:flex-row-reverse justify-between md:pb-[48px] h-[100%] md:relative;
+}
+
+.text_content{
+    @apply md:flex md:flex-col md:justify-end md:h-full md:z-20 md:absolute md:left-[7.5rem] ;
+}
+.title{
+    @apply pb-[32px] font-[700] text-[#fff] text-[50px] md:text-[3.75rem] md:pb-[48px] md:leading-[69px] ml-[17px];
+}
+
+.sub_ul{
+    @apply text-[#fff] text-[26px] leading-[36px] pb-[56px] md:text-[24px] md:text-[#fff] md:pb-[58px];
+}
+
+.phone_content{
+    @apply pt-[88px]  pb-[85px] md:min-w-[374px] md:flex md:items-center right-0 md:pt-0 md:h-[600px] md:w-full;
+}
+.phone{
+    @apply w-[431px] md:w-[374px] md:mt-[36px] block mx-auto md:mr-0 
+}
+
+.footer_text{
+    @apply text-[24px] text-white leading-[29px] mb-[25px] md:pb-[48px] md:mb-0;
+}
+.ecode_content{
+    @apply flex items-end pb-[24px] md:pb-[12px]
+}
+
+
+@media screen and (max-width: 768px)  {
+    .banner{
+        background-image: url("./images/bg-m.png");
+        background-repeat: no-repeat;
+        background-size:contain;
+        background-position:center top;
+        @apply h-[100%] -mt-[92px] pt-[92px] lg:-mt-[114px] z-0;
+    }
+}
+
+@media screen{
+    .banner {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+      }
+}
+
+@media screen and (min-width: 1070.1px) and (max-width: 1200px) {
+    .banner{
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position:center center;
+        @apply h-[600px] pt-0 z-0;
+    }
+    .phone{ 
+        @apply w-[350px] translate-x-[40%] block 
+    }
+    .ebuy_container{
+        @apply translate-x-[-8%]
+    }
+}
+
+@media screen and (min-width: 872.1px) and (max-width: 1070px) {
+    .banner{
+        background-image: url("./images/bg-m.png");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position:center top;
+        @apply  z-0 shrink-0;
+        height: 100%
+    }
+    .content{
+        @apply  flex-col  pb-0 translate-x-[-5%];
+
+    }
+    .phone{ 
+        @apply  block mx-auto  w-[431px]   mt-[202px]
+    }
+    .title{
+        @apply  md:ml-[17px]
+    }
+    
+    .footer_text{
+        @apply mb-[25px] pb-0 
+    }
+    .text_content{
+        @apply  static z-0 mt-[85px] 
+    }
+    .ecode_content{
+        @apply pb-[24px]
+    }
+}
+
+@media screen and (min-width: 768.1px) and (max-width: 872px) {
+    .banner{
+        background-image: url("./images/bg-m.png");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position:center top;
+        @apply h-[100%] z-0 ;
+    }
+    .content{
+        @apply  flex-col  pb-0 translate-x-[-5%];
+        height: 100%;
+    }
+    .phone{ 
+        @apply  block mx-auto  w-[431px]   mt-[202px]
+    }
+    .title{
+        @apply  text-[50px] pb-[32px] ml-[17px];
+        
+    }
+    
+    .footer_text{
+        @apply mb-[25px] pb-0 
+    }
+    .text_content{
+        @apply  static z-0 mt-[85px]
+    }
+    .ecode_content{
+        @apply pb-[24px]
+    }
+    .sub_ul{
+        @apply text-[26px] pb-[56px]
+    }
+
+}
+
+// 定义动画---手机图片
+@keyframes slide-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+}
+  
+  // 定义动画---banner文字
+@keyframes slide-in-text {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+}
+  
+@media screen and (min-width:1071px){
+     /* 应用动画 */
+  .phone {
+    animation: slide-in 1s ease;
+  }
+  .text_content{
+    animation: slide-in-text 1s ease;
+  }
+}
+
+
+
+

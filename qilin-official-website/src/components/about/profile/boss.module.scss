@@ -1,0 +1,86 @@
+.boss_container{
+    @apply col-start-1 col-end-25 flex flex-col md:flex-row md:items-center md:justify-between md:pb-[72px] opacity-0
+}
+.boss_img_container{
+    @apply flex w-full justify-end md:block  md:w-[29%] md:min-w-[342px] md:px-[50px]
+}
+.boss_img{
+    @apply  w-[280px] md:w-[242px] md:px-[unset] ;
+   
+}
+
+.boss_content{
+    @apply pt-[27px] min-h-[289px] w-full flex-1 translate-y-[-72px] flex-col justify-between pl-[20px] md:flex md:w-[61%] md:translate-y-[unset] md:py-[27px]
+}
+.boss_name{
+    @apply text-[42px] font-[600] 
+}
+.boss_profile1{
+    @apply pt-[24px] text-[26px] leading-[44px] text-[#333] md:pt-[8px] md:pt-[unset] md:text-[20px] md:leading-[31px]
+}
+.boss_profile2{
+    @apply pt-[24px] text-[26px] leading-[44px] text-[#333]  md:text-[20px] md:leading-[31px]
+}
+
+@media screen and (min-width:768.9px) and (max-width:1024.9px){
+    .boss_container{
+        @apply flex-col items-end pb-0
+    }
+    
+    .boss_img_container{
+        @apply pr-0 pl-[66px] shrink-0
+    }
+    .boss_img{
+        @apply md:max-w-[280px]  w-[280px];
+       }
+    .boss_content{
+    @apply items-start w-full translate-y-[-60px] 
+    }
+}
+
+.boss_content_zh{
+    @apply pt-[27px] min-h-[240px] w-full flex-1 translate-y-[-72px] flex-col justify-between pl-[20px] md:flex md:w-[100%] md:translate-y-[unset] md:py-[27px]
+}
+.boss_profile_zh{
+    @apply md:text-[20px] md:mt-[-100px]
+}
+.boss_profile_zh p{
+   @apply md:leading-[31px]
+}
+.boss_profile_zh p:first-child{
+    @apply md:mb-[25px]
+ }
+
+@media screen and (min-width:768.1px) and (max-width:1196.9px){
+    .boss_content_zh{
+        @apply min-h-[276px]
+    }
+}
+@media screen and (min-width:768.1px) and (max-width:1024px){
+    .boss_content_zh{
+        @apply md:mt-[-50px] ;
+    }
+    .boss_profile_zh{
+        margin-bottom: 30px !important;
+        
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+@media screen and (max-width:1024.9px){
+    .boss_img{
+        animation: fadeIn 2s ease-in;
+    }
+}
+
+
+
+
+

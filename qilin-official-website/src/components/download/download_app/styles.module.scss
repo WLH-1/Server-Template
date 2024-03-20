@@ -1,0 +1,63 @@
+.content1{
+    @apply flex md:flex-row md:justify-between md:items-center flex-col md:w-[100%]  mt-[100px] mb-[124px] w-full
+}
+.content2{
+    @apply flex md:flex-row md:justify-between md:items-center flex-col md:w-[100%] 
+}
+.download{
+    @apply flex flex-col mt-[72px] md:mt-0 md:min-w-[237px] md:w-[41%] md:justify-end
+}
+
+.download_title{
+    @apply text-[42px] font-[700] leading-[51px] md:mb-[48px] md:w-[50%] w-full mb-[43px]
+}
+
+.download_text{
+    @apply md:leading-[31px] text-[#333]  md:text-[20px] text-[26px] w-[100%] leading-[44px]
+}
+.ecode_content{
+    @apply md:mt-[100px] flex md:flex-col md:items-start items-end
+}
+.ecode_top{
+    @apply flex items-center w-[238px] h-[78px] border border-solid border-[#979797] rounded-[8px] mr-[45px] md:mr-0;
+}
+.ecode_store{
+    @apply w-[238px] h-[78px] md:h-[100%]                       
+}    
+.ecode_text{
+    @apply text-[#575555] font-[700] text-[26px]
+}
+.ecode{
+    @apply w-[120px] 
+}
+.googlePlay{
+    @apply w-[258px] md:my-[32px] my-0 mx-[24px] md:mx-0
+}
+
+@media screen and (min-width: 768.1px) and (max-width: 1070px) {
+    .content1{
+        @apply flex-col
+    }  
+    .download{
+        @apply w-full mt-[72px]
+    }
+    .download_title{
+        @apply mb-[43px] w-full
+    }
+    .download_text{
+        @apply text-[26px]
+    }
+    .ecode_content{
+        @apply flex-row items-end mt-[63px]
+    }
+    .ecode{
+        @apply  mt-0
+    }
+    .content2{
+        flex-direction: column-reverse !important;
+    }
+    
+    .googlePlay{
+        @apply my-0 mx-[24px]
+    }
+}

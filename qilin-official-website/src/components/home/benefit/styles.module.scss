@@ -1,0 +1,23 @@
+.benefit {
+  // background-image: url("./images/benefit-bg.png");
+  // background-size: 1440px 100%;
+}
+.benefitTitle{
+   background-image: url("./images/tittleBg.png");
+   background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.swiperImg{
+  width:calc(calc(100% - 60px) / 3) ;
+
+
+}
+
+
+@media screen and (min-width:768px){
+  .swiperImg{
+  width:calc(calc(100% - 240px) / 3) ;
+  min-width: 175px;
+}
+
+}
