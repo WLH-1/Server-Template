@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "license": "",
   "private": true,
-  "homepage": "https://Lee0814.github.io/ebuy-official-website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
