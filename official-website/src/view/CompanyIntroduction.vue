@@ -3,13 +3,35 @@
         <div class="banner container-fuild text-center">关于我们</div>
         <div class="container">
             <div class="row CompanyIntroduction-container">
-                <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
-                    <img class="img-responsive center-block" src="@/assets/img/about_img.png">
-                </div>
+                 <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
+                        <img class="img-responsive center-block" src="@/assets/img/about_innovation_img.jpg">
+                  </div>
                 <div class="col-xs-12 col-sm-12 col-md-6">
-                    <h3>网站建设文化传播有限公司</h3>
-                    <p class=".text-justify">有家软件公司, 是一家以高科技创意为核心的技术服务公司, 聚集了众多对软件开发和界面设计有独特创意的高端人才, 致力于为企业提供软件开发, 网站建设, 网页设计, IT外包, 手机应用开发, 互联网营销, 微信平台开发等解决方案。</p>
-                    <p class=".text-justify">我们的客户包括集团上市公司, 酒店, IT科技, 教育, 服装, 贸易, 外贸, 时尚, 生物, 工业, 制造等众多行业, 并树立了良好的口碑, 积累了丰富的经验和成功案例. 我们提供权威专业的互联网品牌策划, 并实施高标准的设计方案, 创造真正意义上的品牌网站, 为互联网品牌在互动行销领域创造最大价值而不懈努力!</p>
+                    <h3>创新</h3>
+                    <p class=".text-justify">
+                        成都启林未来科技有限公司, 成立于2021年, 是一家锐意进取的生物科技企业, 专注于运用最前沿的分子生物学检测技术和先进的生物信息分析技术, 为全球科研机构及企业提供一站式、全方位的生命科学科研解决方案。公司矢志不渝地追求科技创新, 旨在成为生命科学研究领域以及人类健康事业的卓越贡献者, 提供领先且具有影响力的科技产品与专业服务, 赋能科研进步, 共筑健康未来。
+                    </p>
+                </div>
+            </div>
+            <div class="row CompanyIntroduction-container">
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <h3>服务</h3>
+                    <p class=".text-justify">历经多年坚韧不拔的奋斗与拓展, 当前, 我们成功构建了全面的产品体系, 广泛涉猎转录组学、微生物组学、人类基因组学、蛋白组学及代谢组学等多元组学领域, 并提供包括PCR、WB、BSP、分子分型在内的全套常规分子实验服务。与此同时, 我们还特别注重个性化需求, 精心打造定制化的生物信息学服务, 以满足不同客户的深层次科研需求, 不断拓展生命科学边界, 用专业与创新为行业发展注入活力。</p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
+                        <img class="img-responsive center-block" src="@/assets/img/about_service_img.jpg">
+                    </div>
+            </div>
+            <div class="row CompanyIntroduction-container">
+                 <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
+                        <img class="img-responsive center-block" src="@/assets/img/about_excellence_img.jpg">
+                    </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <h3>卓越</h3>
+                    <p class=".text-justify">
+                        作为创新型企业, 我们紧跟科学技术的最新发展, 将前沿的分子生物学检测技术与生物信息分析技术相结合, 为客户提供高质量的科研服务。我们拥有一支经验丰富、高素质的团队, 具备深厚的科研背景和专业知识。借助先进的技术设备和精密的实验室环境, 我们能够提供准确、可靠的实验数据和全面的数据分析报告。
+                    </p>
+                    <p class=".text-justify">我们团队凭借深厚的专业技术服务底蕴、追求卓越的服务品质, 以及健全有保障的售后机制, 成功构筑起国内首屈一指的科研服务与生产平台。我们矢志以高效精准的技术实力、无微不至的服务水准, 以及严谨可靠的售后体系, 赋能科研创新与产业升级, 为打造一流的科研服务和生产环境提供强有力支撑。</p>
                 </div>
             </div>
         </div>
@@ -19,47 +41,50 @@
 import { WOW } from 'wowjs';
 export default {
     name: 'CompanyIntroduction',
-    data(){
-        return{
+    data() {
+        return {
 
         }
     },
-    mounted(){
+    mounted() {
         var wow = new WOW();
         wow.init();
     }
 }
 </script>
 <style scoped>
-.banner{
+.banner {
     color: #fff;
     font-size: 30px;
     height: 150px;
     line-height: 150px;
-    background-image: url('../assets/img/banner1.png');
+    background-image: url('../assets/img/banner_usually.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
     background-position: center center;
 }
-.row{
+
+.row {
     margin-right: 0;
     margin-left: 0;
 }
-.CompanyIntroduction-container{
+
+.CompanyIntroduction-container {
     padding: 100px 0;
     color: #808080;
     transition: all ease 0.5s;
 }
-.CompanyIntroduction-container>div>p{
+
+.CompanyIntroduction-container>div>p {
     font-size: 14px;
     line-height: 2.5rem;
 }
-@media screen and (max-width: 997px){
-    .CompanyIntroduction-container{
-    padding: 10px 0;
-    color: #808080;
-}
-}
-</style>
+
+@media screen and (max-width: 997px) {
+    .CompanyIntroduction-container {
+        padding: 10px 0;
+        color: #808080;
+    }
+}</style>
 

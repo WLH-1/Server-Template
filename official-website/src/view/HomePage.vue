@@ -3,22 +3,16 @@
     <!-- 轮播图 -->
     <div id="swiper" class="container-fuild">
       <div class="swiper-container banner-swiper">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" >
           <div class="swiper-slide" v-for="(item,index) in swiperList" :key="index">
             <img class="swiper-lazy" :data-src="item.img" alt="轮播图">
             <div class="swiper-lazy-preloader"></div>
-            <div class="swiper-slide-title">
+            <div class="swiper-slide-title" style="display: flex;align-items: center;flex-direction: column;justify-content: center;">
                 <h1>{{item.title}}</h1>
                 <p>{{item.content}}</p>
             </div>
           </div>
         </div>
-        <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
-
-        <!-- 如果需要导航按钮 -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
       </div>
     </div>
     <!-- 大数据管理系统 -->
@@ -143,10 +137,10 @@ export default {
     return {
       swiperList: [
         {
-          img: require("@/assets/img/home-banner-bg.png"),
+          img: require("@/assets/img/home-banner-bg.jpg"),
           path: "",
-          title: '您身边的IT专家1',
-          content: '宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介宣传简介',
+          title: '前沿分子生物学检测',
+          content: '致力于为生命科学研究和人类健康提供领先的科技产品和服务提供者',
         },
       ],
       customerList: [
@@ -262,48 +256,16 @@ export default {
   mounted() {
     /* banner-swiper */
     new Swiper(".banner-swiper", {
-      loop: true, // 循环模式选项
-      effect: 'fade',
-      //自动播放
-      autoplay: {
-        delay: 3000,
-        stopOnLastSlide: false,
-        disableOnInteraction: false
-      },
-      // 如果需要分页器
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-      },
-      // 如果需要前进后退按钮
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
+      loop: false, // 循环模式选项
       // 延迟加载
       lazy: {
-        loadPrevNext: true
+        loadPrevNext: false
       },
-      observer: true, //修改swiper自己或子元素时，自动初始化swiper
-      observeParents: true //修改swiper的父元素时，自动初始化swiper
     });
     /* customer-swiper */
     new Swiper(".customer-swiper", {
       loop: true, // 循环模式选项
       slidesPerView: 3,
-      //自动播放
-      autoplay: {
-        delay: 3000,
-        stopOnLastSlide: false,
-        disableOnInteraction: false
-      },
-      // 如果需要前进后退按钮
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      observer: true, //修改swiper自己或子元素时，自动初始化swiper
-      observeParents: true //修改swiper的父元素时，自动初始化swiper
     });
     /* wowjs动画 */
     var wow = new WOW({
@@ -325,7 +287,7 @@ export default {
 
 /* 轮播图 */
 #swiper {
-  height: 600px;
+  height: 100vh;
 }
 #swiper .banner-swiper {
   width: 100%;
@@ -351,11 +313,10 @@ export default {
   line-height: 80px;
 }
 #swiper .banner-swiper .swiper-slide-title > h1{
-  font-size: 50px;
-  margin-top: 12%;
+  font-size: 60px;
 }
 #swiper .banner-swiper .swiper-slide-title > p{
-  font-size: 20px;
+  font-size: 30px;
   margin-top: 1%;
   font-weight: 700;
 }

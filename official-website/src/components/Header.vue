@@ -82,44 +82,30 @@ export default {
           children: []
         },
         {
-          name: "软件产品",
-          path: "/software",
-          children: [
-            {
-              name: "智能小镇管理系统",
-              path: "/software/smartTown"
-            },
-            {
-              name: "大数据管理系统",
-              path: "/software/bigData"
-            }
-          ]
-        },
-        {
-          name: "相关服务",
+          name: "组学服务",
           path: "/service",
           children: []
         },
         {
-          name: "新闻动态",
+          name: "分子实验",
           path: "/newsinformation",
           children: []
         },
         {
-          name: "公司介绍",
+          name: "生信服务",
+          path: "/newsinformation",
+          children: []
+        },
+        {
+          name: "关于我们",
           path: "/companyintroduction",
           children: []
         },
         {
-          name: "工作机会",
-          path: "/jobchance",
+          name: "行业动态",
+          path: "/newsinformation",
           children: []
         },
-        {
-          name: "联系我们",
-          path: "/contactus",
-          children: []
-        }
       ]
     };
   },

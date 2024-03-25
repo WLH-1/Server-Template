@@ -1,176 +1,92 @@
 <template>
-  <div id="ServiceDetail">
-    <div class="banner container-fuild text-center">相关服务</div>
-    <div class="container">
-      <div class="row center-block">
-        <!-- <div class="col-xs-12 col-sm-12 col-md-3" id="myScrollspy">
-          <ul class="nav nav-tabs nav-stacked center-block" id="myNav">
-            <p>特色服务</p>
-            <li
-              :class="item.id==id?'active':''"
-              v-for="(item,index) in serviceNavList"
-              :key="index"
-            >
-              <a :href="'#'+item.id">{{item.title}}</a>
-            </li>
-          </ul>
-        </div> -->
-        <div class="col-xs-12 col-sm-12 content  wow zoomIn">
-          <div class="content-block" v-for="(item, index) in serviceContentList" :key="index">
-            <h2 :id="item.id">
-              {{ item.title }}
-              <small>/ {{ item.eng_title }}</small>
-            </h2>
-            <div v-html="item.content"></div>
-          </div>
+    <div id="service" class="container">
+        <div class="row">
+            <div id="left" class="col-md-4 col-xs-12">
+                <ul class="left-container wow bounceInLeft">
+                    <p>软件产品</p>
+                    <li :class="leftIndex == index?'liActive':'liUnactive'" v-for="(item, index) in serviceList" :key="index">
+                        <router-link :to=item.path>{{ item.name }}</router-link>
+                    </li>
+                </ul>
+            </div>
+            <div id="right" class="col-md-8 col-xs-12  wow bounceInRight">
+                <router-view></router-view>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </template>
 <script>
 import { WOW } from "wowjs";
+import omicsServices from "../data/omicsServices.json";
 export default {
-  name: "ServiceDetail",
-  data() {
-    return {
-      id: "section-1",
-      serviceNavList: [
-        {
-          id: "section-1",
-          title: "软件定制开发"
-        },
-        {
-          id: "section-2",
-          title: "IT外包服务"
-        },
-        {
-          id: "section-3",
-          title: "网上商城建设"
-        },
-        {
-          id: "section-4",
-          title: "iOS应用定制开发"
+    name: 'service',
+    data() {
+        return {
+            serviceList: omicsServices[0].children,
+            leftIndex: 0,
+            rightIndex: 0,
         }
-      ],
-      serviceContentList: [
-        {
-          id: "section-1",
-          title: "软件定制开发",
-          eng_title: "Customize App",
-          content:
-            "<h3>这是标题1</h3><p>这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。</p><h3>这是标题2</h3><p>这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。</p>"
-        },
-        {
-          id: "section-2",
-          title: "IT外包服务",
-          eng_title: "Outsourcing",
-          content:
-            "<h3>这是标题1</h3><p>这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。</p><h3>这是标题2</h3><p>这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。</p>"
-        },
-        {
-          id: "section-3",
-          title: "网上商城建设",
-          eng_title: "eCommerce Site",
-          content:
-            "<h3>这是标题1</h3><p>这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。</p><h3>这是标题2</h3><p>这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。</p>"
-        },
-        {
-          id: "section-4",
-          title: "iOS应用定制开发",
-          eng_title: "iOS App Dev",
-          content:
-            "<h3>这是标题1</h3><p>这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。</p><h3>这是标题2</h3><p>这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。这里是内容，请根据实际需要修改。</p>"
-        }
-      ]
-    };
-  },
-  mounted() {
-    this.id = this.$route.params.id;
-    this.$nextTick(() => {
-      var top = document.getElementById(this.id);
-      if (top) {
-        $(window).scrollTop(top.offsetTop + 100);
-      }
-      var wow = new WOW();
-      wow.init();
-    })
-  }
-};
+    },
+    mounted() {
+        var wow = new WOW();
+        wow.init();
+    },
+    methods: {
+    }
+}
 </script>
 <style scoped>
-.banner {
-  color: #fff;
-  font-size: 30px;
-  height: 150px;
-  line-height: 150px;
-  background-image: url("../assets/img/banner_2.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: scroll;
-  background-position: center center;
+#left {
+    margin: 50px 0;
 }
 
-ul.nav-tabs {
-  width: 200px;
-  margin-top: 40px;
-  border-radius: 4px;
-  background: #fff;
-  z-index: 99999;
-  border: 1px solid #474747;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+.liActive {
+    background-color: #999999;
 }
 
-ul.nav-tabs li {
-  text-align: center;
-  margin: 0;
-  border-top: 1px solid #474747;
+.liUnactive {
+    background-color: #FFFFFF;
 }
 
-ul.nav-tabs p {
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  background: #474747;
-  margin: 0;
-  padding: 10px 0;
+
+.left-container {
+    width: 60%;
+    margin: 0 auto;
+    border: 1px solid #474747;
 }
 
-ul.nav-tabs li:first-child {
-  border-top: none;
+.left-container>p {
+    text-align: center;
+    line-height: 45px;
+    padding: 0;
+    margin: 0;
+    background: #474747;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-ul.nav-tabs li a {
-  margin: 0;
-  padding: 8px 16px;
-  border-radius: 0;
+.left-container>li {
+    text-align: center;
+    padding: 0 24px;
+    height: 38px;
+    line-height: 38px;
+    margin: 0;
+    border-top: 1px solid #474747;
 }
 
-ul.nav-tabs li.active a,
-ul.nav-tabs li.active a:hover {
-  color: #fff;
-  background: #474747;
-  border: 1px solid #474747;
+.left-container>li>a {
+    text-decoration: none;
 }
 
-ul.nav-tabs li:first-child a {
-  border-radius: 4px 4px 0 0;
+#right {
+    padding: 50px 0;
 }
 
-ul.nav-tabs li:last-child a {
-  border-radius: 0 0 4px 4px;
+@media screen and (max-width: 768px) {
+    #right {
+        padding: 15px;
+    }
 }
+</style>
 
-ul.nav-tabs.affix {
-  top: 30px;
-}
-
-.content-block {
-  margin: 50px 0;
-}
-
-.content-block>h2 {
-  padding: 20px 0;
-  border-bottom: 1px solid #ccc;
-}</style>

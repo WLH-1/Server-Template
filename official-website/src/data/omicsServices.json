@@ -1,0 +1,193 @@
+[
+    {
+        "title": "转录组",
+        "children": [
+            {
+                "name": "SmalI RNA测序",
+                "path": "/omicsServicesComponents/Transcribe1"
+            },
+            {
+                "name": "LnCRNA测序",
+                "path": ""
+            },
+            {
+                "name": "CircRNA测序",
+                "path": ""
+            },
+            {
+                "name": "全转录组测序",
+                "path": ""
+            },
+            {
+                "name": "全长转录组测序",
+                "path": ""
+            },
+            {
+                "name": "真核无参转录组测序",
+                "path": ""
+            },
+            {
+                "name": "真核有参转录组测序",
+                "path": ""
+            },
+            {
+                "name": "原核转录组测序",
+                "path": ""
+            },
+            {
+                "name": "绝对定量转录组测序",
+                "path": ""
+            },
+            {
+                "name": "外泌体测序",
+                "path": ""
+            }
+        ]
+    },
+    {
+        "title": "动植物基因组",
+        "children": [
+            {
+                "name": "动植物基因组de novo测序",
+                "path": ""
+            },
+            {
+                "name": "遗传变异检测",
+                "path": ""
+            },
+            {
+                "name": "BSA性状定位",
+                "path": ""
+            },
+            {
+                "name": "遗传图谱构建",
+                "path": ""
+            },
+            {
+                "name": "群体进化",
+                "path": ""
+            },
+            {
+                "name": "全基因组关联分析",
+                "path": ""
+            },
+            {
+                "name": "SSR分子标记开发",
+                "path": ""
+            }
+        ]
+    },
+    {
+        "title": "表现基因学",
+        "children": [
+            {
+                "name": "ATAC-seq",
+                "path": ""
+            },
+            {
+                "name": "Cut&Tag-seq",
+                "path": ""
+            },
+            {
+                "name": "ChIP-Seg",
+                "path": ""
+            },
+            {
+                "name": "RNA甲基化测序",
+                "path": ""
+            },
+            {
+                "name": "全慕因组甲某化测序",
+                "path": ""
+            }
+        ]
+    },
+    {
+        "title": "微生物组",
+        "children": [
+            {
+                "name": "群落多样性组成谱测序",
+                "path": ""
+            },
+            {
+                "name": "标记基因全长测序",
+                "path": ""
+            },
+            {
+                "name": "扩增子/功能基因测序",
+                "path": ""
+            },
+            {
+                "name": "宏基因组测序",
+                "path": ""
+            },
+            {
+                "name": "宏转录组测序",
+                "path": ""
+            }
+        ]
+    },
+    {
+        "title": "代谢组",
+        "children": [
+            {
+                "name": "非靶向代谢组",
+                "path": ""
+            },
+            {
+                "name": "靶向代谢组",
+                "path": ""
+            },
+            {
+                "name": "脂质代谢组",
+                "path": ""
+            }
+        ]
+    },
+    {
+        "title": "人基因组",
+        "children": [
+            {
+                "name": "全外显子组测序",
+                "path": ""
+            },
+            {
+                "name": "人基因组重测序",
+                "path": ""
+            },
+            {
+                "name": "目标区域捕获测序",
+                "path": ""
+            }
+        ]
+    },
+    {
+        "title": "蛋白组",
+        "children": [
+            {
+                "name": "定量蛋白质组",
+                "path": ""
+            },
+            {
+                "name": "蛋白质定性分析",
+                "path": ""
+            },
+            {
+                "name": "靶向蛋白质组",
+                "path": ""
+            },
+            {
+                "name": "蛋白质翻译后修饰",
+                "path": ""
+            },
+            {
+                "name": "4D-label free定量蛋白组",
+                "path": ""
+            },
+            {
+                "name": "4D-DIA定量蛋白组",
+                "path": ""
+            }
+        ]
+    }
+]
