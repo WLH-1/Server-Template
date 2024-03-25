@@ -44,7 +44,7 @@
         <div class="header-nav-m-logo">
           <img class="center-block" src="@/assets/img/logo_black.png" alt="logo">
         </div>
-        <div  data-toggle="collapse" data-target="#menu" @click="menuClick">
+        <div data-toggle="collapse" data-target="#menu" @click="menuClick">
             <span :class="menuClass"></span>
         </div>
       </div>
@@ -145,6 +145,7 @@ export default {
       // 在这里执行其他操作，根据需要更新页面内容或执行特定的逻辑
     },
     navClick(index, name) {
+      this.menuClick()
       this.navIndex = index;
       sessionStorage.setItem('navIndex', index)
       this.menuName = name;

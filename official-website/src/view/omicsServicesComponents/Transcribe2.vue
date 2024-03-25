@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="row" v-if="rightIndex == 0">
-            <div class="text-center title">Small RNA介绍</div>
+            <div class="text-center title">Small RNA介绍11111</div>
             <div class="content">
                 Small RNA ，长度在 18-30nt，主要包括 miRNA、 siRNA 和
                 piRNA。在基因表达调控、生物个体发育、代谢及疾病的发生等生理过程中起着重要的作用。Small
@@ -43,7 +43,7 @@
                 藻类样品：收集新鲜藻类样本（无培养基残留），大于200mg。12000rpm离心，弃上清（无培养基残留），取样后液氮快速冷冻，-80℃冻存，干冰运输，不建议使用RNAlater。
             </div>
         </div>
-        <div class="row" style="padding: 0 10px;" v-if="rightIndex == 3">
+        <div class="row" v-if="rightIndex == 3">
             <div class="text-center title">技术线路</div>
             <div class="imgClass">
                 <img src="../../assets/serverImg/Transcribe1/Transcribe1_1.png" class="img-responsive" alt="Image">

@@ -8,7 +8,7 @@
             },
             {
                 "name": "LnCRNA测序",
-                "path": ""
+                "path": "/omicsServicesComponents/Transcribe2"
             },
             {
                 "name": "CircRNA测序",

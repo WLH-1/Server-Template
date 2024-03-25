@@ -22,7 +22,7 @@ export default new Router({
           name: "home",
           component: (resolve) => require(["@/view/HomePage"], resolve),
           meta: {
-            title: "首页",
+            title: "启林未来",
           },
         },
         {
@@ -52,6 +52,14 @@ export default new Router({
               component: (resolve) =>
                 require([
                   "@/view/omicsServicesComponents/Transcribe1",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/Transcribe2",
+              name: "Transcribe2",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/Transcribe2",
                 ], resolve),
             },
           ],

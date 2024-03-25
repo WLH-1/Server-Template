@@ -444,8 +444,17 @@ export default {
 /* 媒体查询（手机） */
 @media screen and (max-width: 768px) {
   #swiper {
-    height: 200px;
+    height: 220px;
+    width: auto;
   }
+  #swiper .banner-swiper .swiper-slide-title > h1{
+  font-size: 24px;
+}
+  #swiper .banner-swiper .swiper-slide-title > p{
+  font-size: 11px;
+  margin-top: 1%;
+  font-weight: 700;
+}
   #bigData {
     padding: 30px;
   }
