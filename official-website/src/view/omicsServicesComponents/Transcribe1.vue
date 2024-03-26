@@ -148,7 +148,7 @@ export default {
 }
 
 .btnUnactive {
-    background-color: #ffffff;
+    background-color: #F7F7F7;
 }
 
 @media screen and (max-width: 768px) {

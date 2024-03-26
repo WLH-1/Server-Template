@@ -62,6 +62,22 @@ export default new Router({
                   "@/view/omicsServicesComponents/Transcribe2",
                 ], resolve),
             },
+            {
+              path: "/omicsServicesComponents/Transcribe3",
+              name: "Transcribe3",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/Transcribe3",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/Transcribe4",
+              name: "Transcribe4",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/Transcribe4",
+                ], resolve),
+            },
           ],
         },
         {

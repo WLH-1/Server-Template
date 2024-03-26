@@ -69,7 +69,7 @@ export default {
                         },
                         {
                             "name": 'CircRNA测序',
-                            "path":""
+                            "path": "/omicsServicesComponents/Transcribe3"
                         },
                         // {
                         //     name: '全转录组测序'
@@ -79,7 +79,7 @@ export default {
                         // },
                         {
                             "name": '真核无参转录组测序',
-                            "path":""
+                            "path": "/omicsServicesComponents/Transcribe4"
                         },
                         {
                             "name": '真核有参转录组测序',
