@@ -31,6 +31,7 @@ export default {
   background: #474747;
   overflow: hidden;
   text-align: center;
+  flex-shrink: 0;
 }
 .logo {
   width: 95px;

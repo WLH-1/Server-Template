@@ -1,7 +1,9 @@
 <template>
   <div @wheel="handleWheel" id="app">
     <Header @toTop="GoTop"></Header>
-    <router-view/>
+    <div class="contentApp">
+      <router-view />
+    </div>
     <Footer></Footer>
     <GoTop></GoTop>
   </div>
@@ -19,7 +21,7 @@ export default {
     this.$store.commit('setScrollType', value);
   },
   destroyed() {
-      sessionStorage.setItem('scrollType', this.scrollType)
+    sessionStorage.setItem('scrollType', this.scrollType)
   },
   computed: {
     ...mapState(['scrollType']),
@@ -57,4 +59,16 @@ export default {
 </script>
 
 <style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.contentApp {
+  min-height: calc(100% - 300px);
+  /* 这里的 [footer-height] 指 footer 的高度，例如 '100px' */
+  box-sizing: border-box;
+  padding-bottom: 300px;
+}
 </style>
