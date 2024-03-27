@@ -46,31 +46,31 @@
         <div class="row" style="padding: 0 10px;" v-if="rightIndex == 3">
             <div class="text-center title">技术线路</div>
             <div class="imgClass">
-                <img src="../../assets/serverImg/Transcribe1/Transcribe1_1.png" class="img-responsive" alt="Image">
+                <img src="../../../assets/serverImg/Transcribe1/Transcribe1_1.png" class="img-responsive" alt="Image">
             </div>
             <div class="text-center title">Small RNA测序分析结果展示</div>
             <div class="imgClass">
-                <img src="../../assets/serverImg/Transcribe1/Transcribe1_2.png" class="img-responsive" alt="Image">
+                <img src="../../../assets/serverImg/Transcribe1/Transcribe1_2.png" class="img-responsive" alt="Image">
                 <p>共有 miRNA 和特有 miRNA 分析</p>
             </div>
             <div class="imgClass">
-                <img src="../../assets/serverImg/Transcribe1/Transcribe1_3.png" class="img-responsive" alt="Image">
+                <img src="../../../assets/serverImg/Transcribe1/Transcribe1_3.png" class="img-responsive" alt="Image">
                 <p>miRNA 基因组分布</p>
             </div>
             <div class="imgClass">
-                <img src="../../assets/serverImg/Transcribe1/Transcribe1_4.png" class="img-responsive" alt="Image">
+                <img src="../../../assets/serverImg/Transcribe1/Transcribe1_4.png" class="img-responsive" alt="Image">
                 <p>差异 miRNA 分析</p>
             </div>
             <div class="imgClass">
-                <img src="../../assets/serverImg/Transcribe1/Transcribe1_5.png" class="img-responsive" alt="Image">
+                <img src="../../../assets/serverImg/Transcribe1/Transcribe1_5.png" class="img-responsive" alt="Image">
                 <p>miRNA 碱基偏好性分析</p>
             </div>
             <div class="imgClass">
-                <img src="../../assets/serverImg/Transcribe1/Transcribe1_6.png" class="img-responsive" alt="Image">
+                <img src="../../../assets/serverImg/Transcribe1/Transcribe1_6.png" class="img-responsive" alt="Image">
                 <p>miRNA- 基因调控网络</p>
             </div>
             <div class="imgClass">
-                <img src="../../assets/serverImg/Transcribe1/Transcribe1_7.png" class="img-responsive" alt="Image">
+                <img src="../../../assets/serverImg/Transcribe1/Transcribe1_7.png" class="img-responsive" alt="Image">
                 <p>miRNA- 转录因子调控网络</p>
             </div>
         </div>

@@ -4,11 +4,11 @@
         "children": [
             {
                 "name": "SmalI RNA测序",
-                "path": "/omicsServicesComponents/Transcribe1"
+                "path": "/omicsServicesComponents/Transcribe/Transcribe1"
             },
             {
                 "name": "LnCRNA测序",
-                "path": "/omicsServicesComponents/Transcribe2"
+                "path": "/omicsServicesComponents/Transcribe/Transcribe2"
             },
             {
                 "name": "CircRNA测序",

@@ -40,42 +40,66 @@ export default new Router({
           meta: {
             title: "相关服务",
           },
-          // omicsServicesComponents/Transcribe1
+          // omicsServicesComponents/Transcribe/Transcribe1
           children: [
             {
               path: "/service/serviceDetail",
-              redirect: "/omicsServicesComponents/Transcribe1",
+              redirect: "/omicsServicesComponents/Transcribe/Transcribe1",
             },
             {
-              path: "/omicsServicesComponents/Transcribe1",
+              path: "/omicsServicesComponents/Transcribe/Transcribe1",
               name: "Transcribe1",
               component: (resolve) =>
                 require([
-                  "@/view/omicsServicesComponents/Transcribe1",
+                  "@/view/omicsServicesComponents/Transcribe/Transcribe1",
                 ], resolve),
             },
             {
-              path: "/omicsServicesComponents/Transcribe2",
+              path: "/omicsServicesComponents/Transcribe/Transcribe2",
               name: "Transcribe2",
               component: (resolve) =>
                 require([
-                  "@/view/omicsServicesComponents/Transcribe2",
+                  "@/view/omicsServicesComponents/Transcribe/Transcribe2",
                 ], resolve),
             },
             {
-              path: "/omicsServicesComponents/Transcribe3",
+              path: "/omicsServicesComponents/Transcribe/Transcribe3",
               name: "Transcribe3",
               component: (resolve) =>
                 require([
-                  "@/view/omicsServicesComponents/Transcribe3",
+                  "@/view/omicsServicesComponents/Transcribe/Transcribe3",
                 ], resolve),
             },
             {
-              path: "/omicsServicesComponents/Transcribe4",
+              path: "/omicsServicesComponents/Transcribe/Transcribe4",
               name: "Transcribe4",
               component: (resolve) =>
                 require([
-                  "@/view/omicsServicesComponents/Transcribe4",
+                  "@/view/omicsServicesComponents/Transcribe/Transcribe4",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/Transcribe/Transcribe5",
+              name: "Transcribe5",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/Transcribe/Transcribe5",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/Transcribe/Transcribe6",
+              name: "Transcribe6",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/Transcribe/Transcribe6",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/microorganism/microorganism1",
+              name: "microorganism1",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/microorganism/microorganism1",
                 ], resolve),
             },
           ],

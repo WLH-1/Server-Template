@@ -53,7 +53,7 @@
     <!-- 客户评价 -->
     <div id="customer" class="container-fuild">
       <div class="container customer-container">
-        <p class="customer-title text-center">客户评价</p>
+        <p class="customer-title text-center">文章分享</p>
         <div class="swiper-container customer-swiper hidden-xs">
           <div class="swiper-wrapper">
             <div

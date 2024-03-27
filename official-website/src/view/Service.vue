@@ -61,15 +61,15 @@ export default {
                     children: [
                         {
                             "name": "SmalI RNA测序",
-                            "path": "/omicsServicesComponents/Transcribe1"
+                            "path": "/omicsServicesComponents/Transcribe/Transcribe1"
                         },
                         {
                             "name": "LnCRNA测序",
-                            "path": "/omicsServicesComponents/Transcribe2"
+                            "path": "/omicsServicesComponents/Transcribe/Transcribe2"
                         },
                         {
                             "name": 'CircRNA测序',
-                            "path": "/omicsServicesComponents/Transcribe3"
+                            "path": "/omicsServicesComponents/Transcribe/Transcribe3"
                         },
                         // {
                         //     name: '全转录组测序'
@@ -79,15 +79,15 @@ export default {
                         // },
                         {
                             "name": '真核无参转录组测序',
-                            "path": "/omicsServicesComponents/Transcribe4"
+                            "path": "/omicsServicesComponents/Transcribe/Transcribe4"
                         },
                         {
                             "name": '真核有参转录组测序',
-                            "path":""
+                            "path": "/omicsServicesComponents/Transcribe/Transcribe5"
                         },
                         {
                             "name": '原核转录组测序',
-                            "path":""
+                            "path": "/omicsServicesComponents/Transcribe/Transcribe6"
                         },
                         // {
                         //     name: '绝对定量转录组测序'
@@ -103,7 +103,8 @@ export default {
                     children: [
                         {
                             "name": '群落多样性组成谱测序',
-                            "path": ''
+                            "path": "/omicsServicesComponents/microorganism/microorganism1"
+                            
                         },
                         // {
                         //     "name": '标记基因全长测序'

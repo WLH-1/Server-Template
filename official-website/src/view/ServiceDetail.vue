@@ -6,7 +6,7 @@
             <div class="row">
                 <div id="left" class="col-md-4 col-xs-12">
                     <ul class="left-container wow bounceInLeft">
-                        <p>转录组</p>
+                        <p>{{ serverItem.title }}</p>
                         <li :class="leftIndex == index ? 'liActive' : 'liUnactive'" v-for="(item, index) in serviceList"
                             :key="index">
                             <router-link :to=item.path @click.native="routerClick(item, index)">{{ item.name }}</router-link>
@@ -29,10 +29,12 @@ export default {
         return {
             serviceList:[],
             leftIndex: 0,
+            serverItem:null
         }
     },
     mounted() {
         let serverItem = JSON.parse(sessionStorage.getItem('serverItem'))
+        this.serverItem = serverItem
         let serverChild = JSON.parse(sessionStorage.getItem('serverChild'))
         this.serviceList = serverItem.children
         this.leftIndex = serverItem.children.findIndex(x => {
