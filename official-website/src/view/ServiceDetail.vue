@@ -13,7 +13,7 @@
                         </li>
                     </ul>
                 </div>
-                <div id="right" class="col-md-8 col-xs-12  wow bounceInRight">
+                <div id="right" class="col-md-8 col-xs-12 wow bounceInRight">
                     <router-view></router-view>
                 </div>
             </div>
@@ -29,12 +29,11 @@ export default {
         return {
             serviceList:[],
             leftIndex: 0,
-            serverItem:null
+            serverItem: JSON.parse(sessionStorage.getItem('serverItem'))
         }
     },
     mounted() {
         let serverItem = JSON.parse(sessionStorage.getItem('serverItem'))
-        this.serverItem = serverItem
         let serverChild = JSON.parse(sessionStorage.getItem('serverChild'))
         this.serviceList = serverItem.children
         this.leftIndex = serverItem.children.findIndex(x => {
