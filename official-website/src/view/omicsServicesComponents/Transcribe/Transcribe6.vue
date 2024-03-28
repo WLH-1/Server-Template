@@ -94,6 +94,7 @@ export default {
     line-height: 2em;
     word-wrap: break-word;
     padding-top: 20px;
+    color: #666;
 }
 
 .btnActive {

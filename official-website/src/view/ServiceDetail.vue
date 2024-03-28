@@ -9,11 +9,14 @@
                         <p>{{ serverItem.title }}</p>
                         <li :class="leftIndex == index ? 'liActive' : 'liUnactive'" v-for="(item, index) in serviceList"
                             :key="index">
-                            <router-link :to=item.path @click.native="routerClick(item, index)">{{ item.name }}</router-link>
+                            <router-link :to=item.path>
+                                <div @click="routerClick(item, index)">{{ item.name }}</div>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
                 <div id="right" class="col-md-8 col-xs-12 wow bounceInRight">
+                    <div class="text-center centerTitle">{{ serverChild.name }}</div>
                     <router-view></router-view>
                 </div>
             </div>
@@ -27,9 +30,11 @@ export default {
     name: 'service',
     data() {
         return {
-            serviceList:[],
+            serviceList: [],
             leftIndex: 0,
-            serverItem: JSON.parse(sessionStorage.getItem('serverItem'))
+            serverItem: JSON.parse(sessionStorage.getItem('serverItem')),
+            serverChild : JSON.parse(sessionStorage.getItem('serverChild')),
+            title: '123'
         }
     },
     mounted() {
@@ -41,11 +46,23 @@ export default {
         })
         var wow = new WOW();
         wow.init();
+        this.GoTop()
     },
     methods: {
         async routerClick(item, index) {
             this.leftIndex = index
+            this.serverChild = item
             sessionStorage.setItem("serverChild", JSON.stringify(item))
+        },
+        GoTop() {
+            (function smoothscroll() {
+                var currentScroll =
+                    document.documentElement.scrollTop || document.body.scrollTop;
+                if (currentScroll > 0) {
+                    window.requestAnimationFrame(smoothscroll);
+                    window.scrollTo(0, 0);
+                }
+            })();
         },
     }
 }
@@ -106,6 +123,14 @@ export default {
     text-decoration: none;
 }
 
+.centerTitle{
+    color: #1d9dc2;
+    font-size: 26px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
 #right {
     padding: 50px 0;
 }
@@ -114,7 +139,8 @@ export default {
     #right {
         padding: 15px;
     }
-    .banner{
+
+    .banner {
         height: 150px;
     }
 }

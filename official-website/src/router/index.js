@@ -102,6 +102,54 @@ export default new Router({
                   "@/view/omicsServicesComponents/microorganism/microorganism1",
                 ], resolve),
             },
+            {
+              path: "/omicsServicesComponents/microorganism/microorganism2",
+              name: "microorganism2",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/microorganism/microorganism2",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/microorganism/microorganism3",
+              name: "microorganism3",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/microorganism/microorganism3",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/microorganism/microorganism4",
+              name: "microorganism4",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/microorganism/microorganism4",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/Expressionomics/Expressionomics1",
+              name: "Expressionomics1",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/Expressionomics/Expressionomics1",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/Expressionomics/Expressionomics2",
+              name: "Expressionomics2",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/Expressionomics/Expressionomics2",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/Expressionomics/Expressionomics3",
+              name: "Expressionomics3",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/Expressionomics/Expressionomics3",
+                ], resolve),
+            },
           ],
         },
         {

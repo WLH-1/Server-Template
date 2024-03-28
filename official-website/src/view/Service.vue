@@ -16,7 +16,10 @@
                         </div>
                         <ul class="list-group">
                             <li class="list-group-item" v-for="(child, childIndex) in item.children" :key="childIndex">
-                                <router-link :to="child.path" @click.native="routerClick(item, child)"> {{ child.name}}</router-link>
+                                <router-link :to="child.path">
+                                    <!-- 必须这样写，click写在router-link标签上只有第一次点击才会触发routerClick-->
+                                    <div @click="routerClick(item, child)">{{ child.name }}</div>
+                                </router-link>
                             </li>
                         </ul>
                     </div>
@@ -38,7 +41,9 @@
                         </div>
                         <ul class="list-group">
                             <div class="list-group-item" v-for="(child, childIndex) in item.children" :key="childIndex">
-                                <router-link :to="child.path"> {{ child.name }}</router-link>
+                                <router-link :to="child.path">
+                                        <div @click="routerClick(item, child)">{{ child.name }}</div>
+                                    </router-link>
                             </div>
                         </ul>
                     </div>
@@ -60,6 +65,18 @@ export default {
                     eng_title: 'Transcriptome',
                     children: [
                         {
+                            "name": '真核有参转录组测序',
+                            "path": "/omicsServicesComponents/Transcribe/Transcribe5"
+                        },
+                        {
+                            "name": '真核无参转录组测序',
+                            "path": "/omicsServicesComponents/Transcribe/Transcribe4"
+                        },
+                        {
+                            "name": '原核转录组测序',
+                            "path": "/omicsServicesComponents/Transcribe/Transcribe6"
+                        },
+                        {
                             "name": "SmalI RNA测序",
                             "path": "/omicsServicesComponents/Transcribe/Transcribe1"
                         },
@@ -77,18 +94,7 @@ export default {
                         // {
                         //     name: '全长转录组测序'
                         // },
-                        {
-                            "name": '真核无参转录组测序',
-                            "path": "/omicsServicesComponents/Transcribe/Transcribe4"
-                        },
-                        {
-                            "name": '真核有参转录组测序',
-                            "path": "/omicsServicesComponents/Transcribe/Transcribe5"
-                        },
-                        {
-                            "name": '原核转录组测序',
-                            "path": "/omicsServicesComponents/Transcribe/Transcribe6"
-                        },
+                        
                         // {
                         //     name: '绝对定量转录组测序'
                         // }, {
@@ -104,22 +110,22 @@ export default {
                         {
                             "name": '群落多样性组成谱测序',
                             "path": "/omicsServicesComponents/microorganism/microorganism1"
-                            
+
                         },
                         // {
                         //     "name": '标记基因全长测序'
                         // },
                         {
                             "name": '扩增子/功能基因测序',
-                            "path": ''
+                            "path": "/omicsServicesComponents/microorganism/microorganism2"
                         },
                         {
                             "name": '宏基因组测序',
-                            "path": ''
+                            "path": "/omicsServicesComponents/microorganism/microorganism3"
                         },
                         {
                             "name": '宏转录组测序',
-                            "path":''
+                            "path": "/omicsServicesComponents/microorganism/microorganism4"
                         }
                     ]
                 }
@@ -186,18 +192,18 @@ export default {
                         // },
                         {
                             "name": 'Cut&Tag-seq',
-                            "path": ''
+                             "path": "/omicsServicesComponents/Expressionomics/Expressionomics1"
                         },
                         {
                             "name": 'ChIP-Seg',
-                            "path": ''
+                             "path": "/omicsServicesComponents/Expressionomics/Expressionomics2"
                         },
                         // {
                         //     "name": 'RNA甲基化测序'
                         // },
                         {
-                            "name": '全慕因组甲某化测序',
-                            "path": ''
+                            "name": '全基因组甲基化测序',
+                             "path": "/omicsServicesComponents/Expressionomics/Expressionomics3"
                         }
                     ]
                 }
@@ -268,11 +274,12 @@ export default {
         wow.init();
     },
     methods: {
-        async routerClick(item, child) {
+        async routerClick(item, child, index) {
             console.log(123);
             sessionStorage.setItem("serverItem", JSON.stringify(item))
             sessionStorage.setItem("serverChild", JSON.stringify(child))
         },
+       
     }
 }
 </script>

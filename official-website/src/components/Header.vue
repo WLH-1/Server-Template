@@ -19,7 +19,7 @@
     <div class="header-nav container hidden-xs">
       <!-- 导航logo -->
       <div class="header-nav-logo">
-        <img src="@/assets/img/logo_black.png">
+        <img src="@/assets/img/qilin_logo.png">
       </div>
       <!-- 导航内容 -->
       <ul class="header-nav-wrapper">
@@ -40,9 +40,9 @@
     </div>
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
-      <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 50px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 30px;">
         <div class="header-nav-m-logo">
-          <img class="center-block" src="@/assets/img/logo_black.png" alt="logo">
+          <img class="center-block" src="@/assets/img/qilin_logo.png" alt="logo">
         </div>
         <div data-toggle="collapse" data-target="#menu" @click="menuClick">
             <span :class="menuClass"></span>
@@ -130,7 +130,6 @@ export default {
         // 向下滚
         contentElement.style.position = '';
         contentElement.style.padding = '';
-        contentElement.style.opacity = 0;
       }
       if (val <= 0) {
         // 向上滚
@@ -139,7 +138,6 @@ export default {
         contentElement.style.zIndex = '2';
         contentElement.style.left = '0';
         contentElement.style.right = '0';
-        contentElement.style.opacity = 1;
 
       }
       // 在这里执行其他操作，根据需要更新页面内容或执行特定的逻辑
@@ -188,7 +186,6 @@ export default {
 
 /* 导航栏logo */
 #header .header-nav .header-nav-logo {
-  width: 100px;
   height: 100%;
   float: left;
   position: relative;
@@ -196,8 +193,8 @@ export default {
 
 /* 导航栏logo图片 */
 #header .header-nav .header-nav-logo img {
-  width: 95px;
-  height: 45px;
+  width: auto;
+  height: 60px;
   position: absolute;
   top: 0;
   left: 0;
@@ -325,8 +322,8 @@ export default {
 
   /* 导航栏logo图片 */
   #header .header-nav-m .header-nav-m-logo img {
-    width: 95px;
-    height: 45px;
+    width: auto;
+    height: 40px;
     position: absolute;
     top: 0;
     left: 0;
