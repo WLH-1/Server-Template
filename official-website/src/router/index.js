@@ -150,7 +150,48 @@ export default new Router({
                   "@/view/omicsServicesComponents/Expressionomics/Expressionomics3",
                 ], resolve),
             },
+            {
+              path: "/omicsServicesComponents/proteinMetabolism/proteinMetabolism1",
+              name: "proteinMetabolism1",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/proteinMetabolism/proteinMetabolism1",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/proteinMetabolism/proteinMetabolism2",
+              name: "proteinMetabolism2",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/proteinMetabolism/proteinMetabolism2",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/proteinMetabolism/proteinMetabolism3",
+              name: "proteinMetabolism3",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/proteinMetabolism/proteinMetabolism3",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/Unicellular/Unicellular1",
+              name: "Unicellular1",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/Unicellular/Unicellular1",
+                ], resolve),
+            },
+            {
+              path: "/omicsServicesComponents/Unicellular/Unicellular2",
+              name: "Unicellular2",
+              component: (resolve) =>
+                require([
+                  "@/view/omicsServicesComponents/Unicellular/Unicellular2",
+                ], resolve),
+            },
           ],
+          // ,
         },
         {
           path: "/newsinformation",

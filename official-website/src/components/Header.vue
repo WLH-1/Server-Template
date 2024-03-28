@@ -19,7 +19,9 @@
     <div class="header-nav container hidden-xs">
       <!-- 导航logo -->
       <div class="header-nav-logo">
-        <img src="@/assets/img/qilin_logo.png">
+        <router-link :to="'/'">
+          <img src="@/assets/img/qilin_logo.png" @click="toHome">
+        </router-link>
       </div>
       <!-- 导航内容 -->
       <ul class="header-nav-wrapper">
@@ -41,8 +43,10 @@
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 30px;">
-        <div class="header-nav-m-logo">
-          <img class="center-block" src="@/assets/img/qilin_logo.png" alt="logo">
+        <div class="header-nav-m-logo" >
+          <router-link :to="'/'">
+          <img class="center-block" src="@/assets/img/qilin_logo.png" alt="logo" @click="toHome">
+          </router-link>
         </div>
         <div data-toggle="collapse" data-target="#menu" @click="menuClick">
             <span :class="menuClass"></span>
@@ -73,7 +77,6 @@ export default {
   data() {
     return {
       navIndex: sessionStorage.getItem('navIndex') ? sessionStorage.getItem('navIndex') : 0,
-      menuName: "首页",
       menuClass: "glyphicon glyphicon-align-justify",
       navList: [
         {
@@ -142,11 +145,15 @@ export default {
       }
       // 在这里执行其他操作，根据需要更新页面内容或执行特定的逻辑
     },
+    toHome() {
+      this.navIndex = 0;
+      sessionStorage.setItem('navIndex', 0)
+      this.$emit('toTop')
+    },
     navClick(index, name) {
       this.menuClick()
       this.navIndex = index;
       sessionStorage.setItem('navIndex', index)
-      this.menuName = name;
       this.$emit('toTop')
     },
     menuClick() {

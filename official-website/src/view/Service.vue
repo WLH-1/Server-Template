@@ -214,15 +214,15 @@ export default {
                     children: [
                         {
                             "name": '非靶向代谢组',
-                            "path": ''
+                            "path": "/omicsServicesComponents/proteinMetabolism/proteinMetabolism1"
                         },
                         {
                             "name": '靶向代谢组',
-                            "path": ''
+                            "path": "/omicsServicesComponents/proteinMetabolism/proteinMetabolism2"
                         },
                         {
                             "name": '4D-DIA定量蛋白组',
-                            "path": ''
+                            "path": "/omicsServicesComponents/proteinMetabolism/proteinMetabolism3"
                         }
                         // {
                         //     "name": '脂质代谢组'
@@ -258,11 +258,11 @@ export default {
                     children: [
                         {
                             "name": '10X 单细胞转录组',
-                            "path": ''
+                            "path": "/omicsServicesComponents/Unicellular/Unicellular1"
                         },
                         {
                             "name": '空间转录组',
-                            "path": ''
+                            "path": "/omicsServicesComponents/Unicellular/Unicellular2"
                         },
                     ]
                 },

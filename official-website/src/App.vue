@@ -1,7 +1,7 @@
 <template>
   <div @wheel="handleWheel" id="app">
     <Header @toTop="GoTop"></Header>
-    <div class="contentApp">
+    <div id="contentApp">
       <router-view />
     </div>
     <Footer></Footer>
@@ -69,10 +69,18 @@ body{
   overflow-x: hidden;
 }
 
-.contentApp {
+#contentApp {
   min-height: calc(100% - 300px);
   /* 这里的 [footer-height] 指 footer 的高度，例如 '100px' */
   box-sizing: border-box;
-  padding-bottom: 100px;
+  padding-bottom: 300px;
+}
+@media screen and (max-width: 997px) {
+  #contentApp {
+  /* min-height: calc(100% - 300px); */
+  /* 这里的 [footer-height] 指 footer 的高度，例如 '100px' */
+  box-sizing: border-box;
+  padding-bottom: 0px;
+}
 }
 </style>
