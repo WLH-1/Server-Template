@@ -12,11 +12,11 @@
         </div>
       </div>
     </div>
-    <!-- 大数据管理系统 -->
+    <!-- 关于我们 -->
     <div id="bigData" class="container-fuild">
       <div class="row bigData-container">
         <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
-          <img class="img-responsive" src="@/assets/img/img1.png" alt="大数据管理系统">
+          <img class="img-responsive" src="@/assets/img/img1.png" alt="">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6">
           <h2 class="bigData-title">
@@ -26,7 +26,50 @@
           <div class="bigData-content">成都启林未来科技有限公司, 成立于2021年, 是一家锐意进取的生物科技企业, 专注于运用最前沿的分子生物学检测技术和先进的生物信息分析技术,
             为全球科研机构及企业提供一站式、全方位的生命科学科研解决方案。公司矢志不渝地追求科技创新,
             旨在成为生命科学研究领域以及人类健康事业的卓越贡献者, 提供领先且具有影响力的科技产品与专业服务, 赋能科研进步, 共筑健康未来。</div>
-          <a href="#" class="btn btn-lg btn-block btn-info">了解更多</a>
+          <a href="/#/companyintroduction" class="btn btn-lg btn-block btn-info">了解更多</a>
+        </div>
+      </div>
+    </div>
+    <!-- 客户评价 -->
+    <div id="customer" class="container-fuild">
+      <div class="container customer-container">
+        <p class="customer-title text-center">重点产品及服务</p>
+        <div class="swiper-container customer-swiper hidden-xs" style="background-color: #FFFFFF;">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide customer-block" v-for="(item, index) in customerList" :key="index">
+              <router-link :to=item.path tag="span">
+                <div @click="toServiceDetail(item)">
+                  <div class="customer-logo">
+                    <img class="center-block" :src="item.logo" alt="logo">
+                  </div>
+                  <div class="customer-content1 text-center">
+                    <div>{{ item.title }}</div>
+                  </div>
+                  <div class="customer-content2">{{ item.content }}</div>
+                </div>
+              </router-link>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-container visible-xs customer-swiper ">
+          <div class="swiper-wrapper">
+            <div class="customer-block swiper-slide" v-for="(item, index) in customerList" :key="index">
+              <router-link :to=item.path tag="span">
+                <div @click="toServiceDetail(item)">
+
+                  <div class="customer-logo">
+                    <img class="center-block" :src="item.logo" alt="logo">
+                  </div>
+                  <div class="customer-content1 text-center">
+                    <div>{{ item.title }}</div>
+                  </div>
+                  <div class="customer-content2">
+                    <div>{{ item.content }}</div>
+                  </div>
+                </div>
+              </router-link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -34,14 +77,17 @@
     <div id="whyChooseUs" class="conatiner-fuild">
       <div class="container">
         <div class="whyChooseUs-title text-center">
-          <p>合作伙伴</p>
-          <p>PARTNER</p>
+          <p>文献解读</p>
+          <!-- <p>PARTNER</p> -->
         </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-3 server-wrapper" v-for="(item, index) in serverList" :key="index">
+        <div class="row" style="display: flex; justify-content: center;">
+          <div class="col-xs-12 col-md-6 col-md-3 server-wrapper" v-for="(item, index) in industryTrends" :key="index" @click="toArticlesAndIndustryUpdates(item.path)">
             <div class="server-block wow slideInUp" onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
               onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'">
-              <img class="center-block" :src="item.logo" alt="logo">
+              <div class="center-block"
+                style="width: 100px;height: 100px;background: #F7F7F7;color: #10ccd2;display: flex;align-items: center;justify-content: center; border-radius: 50px;padding: 10px;">
+                <div style="font-size: 16px;text-align: center;">{{ item.imgTitle }}</div>
+              </div>
               <p class="text-center">{{ item.title }}</p>
               <div class="text-center" v-html="item.content" onmouseenter="this.style.color='#28f'"
                 onmouseleave="this.style.color='#ccc'"></div>
@@ -50,15 +96,42 @@
         </div>
       </div>
     </div>
+    <div id="whyChooseUs" class="conatiner-fuild">
+      <div class="container">
+        <div class="whyChooseUs-title text-center">
+          <p>行业动态</p>
+          <!-- <p>PARTNER</p> -->
+        </div>
+        <div class="row" style="display: flex; justify-content: center;">
+          <div class="col-xs-12 col-md-6 col-md-3 server-wrapper" v-for="(item, index) in literatureInterpretation"
+            :key="index" @click="toArticlesAndIndustryUpdates(item.path)">
+            <div class="server-block wow slideInUp" onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
+              onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'">
+              <div class="center-block"
+                style="width: 100px;height: 100px;background: #F7F7F7;color: #10ccd2;display: flex;align-items: center;justify-content: center; border-radius: 50px;padding: 10px;">
+                <div style="font-size: 16px;text-align: center;">{{ item.imgTitle }}</div>
+              </div>
+              <p class="text-center">{{ item.title }}</p>
+              <div class="text-center" v-html="item.content" onmouseenter="this.style.color='#28f'"
+                onmouseleave="this.style.color='#ccc'"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 <script>
+import omicsServices from "../data/omicsServices.json";
 import Swiper from "swiper";
 import { WOW } from 'wowjs';
 export default {
   name: "HomePage",
   data() {
     return {
+      serviceList: omicsServices.serviceList,
+      unicellularServiceList: omicsServices.unicellularServiceList,
       swiperList: [
         {
           img: require("@/assets/img/home-banner-bg.jpg"),
@@ -67,32 +140,69 @@ export default {
           content: '致力于为生命科学研究和人类健康提供领先的科技产品和服务提供者',
         },
       ],
-      serverList: [
+      customerList: [
         {
-          logo: require("@/assets/img/tel.png"),
-          title: "核心优势1",
-          content: "<p>由专业客服提供人工服务</p>负责疑难问题和故障受理"
+          logo: require("@/assets/serverImg/danxibao.png"),
+          title: "单细胞",
+          content: "10X 单细胞转录组、空间转录组",
+          value: "单细胞"
         },
         {
-          logo: require("@/assets/img/computer.png"),
-          title: "核心优势2",
-          content: "<p>利用远程视频工具，提供协助</p>帮助客户进行调试、解决故障"
+          logo: require("@/assets/serverImg/zhuanluzu.png"),
+          title: "转录组",
+          content: "真核有参、真核无参测序，Small RNA、LnCRNA、CircRNA测序",
+          value: "转录组"
         },
         {
-          logo: require("@/assets/img/qq.png"),
-          title: "核心优势3",
-          content: "<p>利用企业QQ提供在线解答</p>帮助企业快速准确解决问题和故障"
+          logo: require("@/assets/serverImg/weishenwu.png"),
+          title: "微生物组",
+          content: "宏转录组、宏基因组测序，扩增子/功能基因测序，群落多样性组成谱测序",
+          value: "微生物组"
         },
         {
-          logo: require("@/assets/img/skill.png"),
-          title: "核心优势4",
-          content: "<p>由技术支持工程师，负责问题解答</p>需求受理及故障受理"
+          logo: require("@/assets/serverImg/biaoxianjiyin.png"),
+          title: "表现基因学",
+          content: "Cut&Tag-seq、ChIP-Seg、全基因组甲基化测序",
+          value: "表现基因学"
+        },
+        {
+          logo: require("@/assets/serverImg/daixiedanbai.png"),
+          title: "蛋白代谢检测",
+          content: "非靶向代谢组、靶向代谢组、4D-DIA定量蛋白组",
+          value: "蛋白代谢检测"
+        }
+      ],
+      literatureInterpretation: [
+        {
+          title: "GPT-4与单细胞测序结合：对细胞类型进行注释",
+          content: "使用GPT-4语言模型准确注释单细胞RNA测序（scRNA-seq）分析中的细胞类型",
+          imgTitle: "GPT-4",
+          path:"/GPT-4"
+        }
+      ],
+      industryTrends: [
+        {
+          title: "肿瘤代谢调控肿瘤免疫的研究策略",
+          content: "以T细胞耗竭这个肿瘤免疫过程的关键表型为例，讲讲代谢组学在肿瘤免疫研究中的研究策略。",
+          imgTitle: "肿瘤代谢",
+          path: "/tumorMetabolism"
         }
       ]
     };
   },
+  async created() {
+    let list = [...this.serviceList, ...this.unicellularServiceList]
+    for (const customer of this.customerList) {
+      let index = list.findIndex(x => x.title == customer.value)
+      customer["index"] = index
+      customer["path"] = list[index].children[0].path
+    }
+    await this.$nextTick()
+    await this.getWindowSize()
+  },
   mounted() {
     /* wowjs动画 */
+    window.addEventListener('resize', this.getWindowSize); // 监听窗口变化
     var wow = new WOW({
       boxClass: 'wow',
       animateClass: 'animated',
@@ -101,6 +211,41 @@ export default {
       live: true,
     })
     wow.init();
+  },
+  methods: {
+    toArticlesAndIndustryUpdates(path) {
+      this.$router.push(path);
+    },
+    toServiceDetail(item) {
+      // sessionStorage.setItem('navIndex', 1)
+      // this.$emit('toTop')
+      let list = [...this.serviceList, ...this.unicellularServiceList]
+      sessionStorage.setItem("serverItem", JSON.stringify(list[item.index]))
+      sessionStorage.setItem("serverChild", JSON.stringify(list[item.index].children[0]))
+    },
+    getWindowSize() {
+      let num = 3
+      if (window.matchMedia("(min-width: 996px)").matches) {
+        // 在屏幕宽度大于等于 768px 时执行的代码
+        num = 3
+      } else {
+        // 在屏幕宽度小于 768px 时执行的代码
+        num = 1
+      }
+      /* customer-swiper */
+      new Swiper(".customer-swiper", {
+        loop: true, // 循环模式选项
+        slidesPerView: num,
+        //自动播放
+        autoplay: {
+          delay: 4000,
+          stopOnLastSlide: false,
+          disableOnInteraction: false
+        },
+        observer: true, //修改swiper自己或子元素时，自动初始化swiper
+        observeParents: true //修改swiper的父元素时，自动初始化swiper
+      });
+    }
   }
 };
 </script>
@@ -155,7 +300,7 @@ export default {
 
 /* 大数据管理系统 */
 #bigData {
-  padding: 100px 400px;
+  padding: 100px 100px;
   transition: all ease 0.6s;
   box-sizing: border-box;
   background-color: #F7F7F7;
@@ -166,14 +311,14 @@ export default {
   border-bottom: 1px solid #ccc;
 }
 
-#bigData .bigData-content{
-  font-size: 14px;
-  color: #333;
+#bigData .bigData-content {
+  font-size: 16px;
+  color: #999999;
   line-height: 2em;
   text-indent: 2em;
 }
 
-#bigData a{
+#bigData a {
   margin-top: 20px;
 }
 
@@ -238,13 +383,14 @@ export default {
 
 #customer .customer-block {
   background: #fff;
-  padding: 30px;
+  padding: 30px 80px;
 }
 
+
+
 #customer .customer-logo img {
-  width: 94px;
-  height: 94px;
-  border: 1px solid #ccc;
+  width: 140px;
+  height: 140px;
 }
 
 #customer .customer-yh img {
@@ -253,17 +399,25 @@ export default {
 }
 
 #customer .customer-content1 {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #0ce9f1;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: #10ccd2;
+  font-size: 24px;
+  border-bottom: 1px solid #999999;
 }
 
 #customer .customer-content2 {
   padding-top: 20px;
+  color: #999999;
+}
+
+#customer .customer-block:hover .customer-content2 {
+  color: #10ccd2;
 }
 
 /* 为什么选择我们 */
 #whyChooseUs {
-  padding: 100px;
+  padding: 50px 100px;
 }
 
 #whyChooseUs .whyChooseUs-title {
@@ -352,6 +506,8 @@ export default {
     margin-top: 20px;
   }
 
+  #customer .customer-block:hover {}
+
   #contactUs .contactUs-container .contactUs-contactWay span {
     display: inline-block;
     width: 28px;
@@ -362,7 +518,8 @@ export default {
   #customer {
     padding: 30px 0;
     box-sizing: border-box;
-    background: #fff;
+    background: #efefef;
+
   }
 
   #customer .customer-title {
@@ -398,7 +555,7 @@ export default {
   }
 
   #whyChooseUs .server-block {
-    padding: 50px 0;
+    padding: 50px 20px;
     border: 1px solid #ccc;
     border-bottom: 5px solid #ccc;
   }
@@ -459,6 +616,8 @@ export default {
     margin-top: 30px;
   }
 
+  #customer .customer-block:hover {}
+
   #contactUs .contactUs-container .contactUs-contactWay span {
     display: inline-block;
     width: 32px;
@@ -473,5 +632,6 @@ export default {
   #whyChooseUs {
     padding: 20px 0;
   }
-}</style>
+}
+</style>
 

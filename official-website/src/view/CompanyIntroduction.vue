@@ -96,8 +96,21 @@ export default {
         }
     },
     mounted() {
+        this.GoTop()
         var wow = new WOW();
         wow.init();
+    },
+    methods: {
+        GoTop() {
+            (function smoothscroll() {
+                var currentScroll =
+                    document.documentElement.scrollTop || document.body.scrollTop;
+                if (currentScroll > 0) {
+                    window.requestAnimationFrame(smoothscroll);
+                    window.scrollTo(0, 0);
+                }
+            })();
+        },
     }
 }
 </script>

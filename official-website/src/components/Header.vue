@@ -94,21 +94,21 @@ export default {
           path: "/newsinformation",
           children: []
         },
-        {
-          name: "生信服务",
-          path: "/newsinformation",
-          children: []
-        },
+        // {
+        //   name: "生信服务",
+        //   path: "/newsinformation",
+        //   children: []
+        // },
         {
           name: "关于我们",
           path: "/companyintroduction",
           children: []
         },
-        {
-          name: "行业动态",
-          path: "/newsinformation",
-          children: []
-        },
+        // {
+        //   name: "行业动态",
+        //   path: "/newsinformation",
+        //   children: []
+        // },
       ]
     };
   },
@@ -314,6 +314,19 @@ export default {
 #header .header-nav .header-nav-wrapper>li>dl>dt:hover {
   cursor: pointer;
   background: #ccc;
+}
+
+@media screen and (min-width: 768px) and (max-width: 996px) {
+    #header .header-nav .header-nav-logo img {
+    width: auto;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
 }
 
 @media screen and (max-width: 997px) {

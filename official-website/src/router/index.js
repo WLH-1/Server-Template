@@ -226,6 +226,28 @@ export default new Router({
             title: "联系我们",
           },
         },
+        {
+          path: "/tumorMetabolism",
+          name: "tumorMetabolism",
+          component: (resolve) =>
+            require([
+              "@/view/articlesAndIndustryUpdates/tumorMetabolism",
+            ], resolve),
+          meta: {
+            title: "肿瘤代谢",
+          },
+        },
+        {
+          path: "/GPT-4",
+          name: "GPT-4",
+          component: (resolve) =>
+            require([
+              "@/view/articlesAndIndustryUpdates/GPT-4",
+            ], resolve),
+          meta: {
+            title: "GPT-4",
+          },
+        },
       ],
     },
   ],

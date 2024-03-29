@@ -1,193 +1,113 @@
-[
-    {
-        "title": "转录组",
-        "children": [
-            {
-                "name": "SmalI RNA测序",
-                "path": "/omicsServicesComponents/Transcribe/Transcribe1"
-            },
-            {
-                "name": "LnCRNA测序",
-                "path": "/omicsServicesComponents/Transcribe/Transcribe2"
-            },
-            {
-                "name": "CircRNA测序",
-                "path": ""
-            },
-            {
-                "name": "全转录组测序",
-                "path": ""
-            },
-            {
-                "name": "全长转录组测序",
-                "path": ""
-            },
-            {
-                "name": "真核无参转录组测序",
-                "path": ""
-            },
-            {
-                "name": "真核有参转录组测序",
-                "path": ""
-            },
-            {
-                "name": "原核转录组测序",
-                "path": ""
-            },
-            {
-                "name": "绝对定量转录组测序",
-                "path": ""
-            },
-            {
-                "name": "外泌体测序",
-                "path": ""
-            }
-        ]
-    },
-    {
-        "title": "动植物基因组",
-        "children": [
-            {
-                "name": "动植物基因组de novo测序",
-                "path": ""
-            },
-            {
-                "name": "遗传变异检测",
-                "path": ""
-            },
-            {
-                "name": "BSA性状定位",
-                "path": ""
-            },
-            {
-                "name": "遗传图谱构建",
-                "path": ""
-            },
-            {
-                "name": "群体进化",
-                "path": ""
-            },
-            {
-                "name": "全基因组关联分析",
-                "path": ""
-            },
-            {
-                "name": "SSR分子标记开发",
-                "path": ""
-            }
-        ]
-    },
-    {
-        "title": "表现基因学",
-        "children": [
-            {
-                "name": "ATAC-seq",
-                "path": ""
-            },
-            {
-                "name": "Cut&Tag-seq",
-                "path": ""
-            },
-            {
-                "name": "ChIP-Seg",
-                "path": ""
-            },
-            {
-                "name": "RNA甲基化测序",
-                "path": ""
-            },
-            {
-                "name": "全基因组甲基化测序",
-                "path": ""
-            }
-        ]
-    },
-    {
-        "title": "微生物组",
-        "children": [
-            {
-                "name": "群落多样性组成谱测序",
-                "path": ""
-            },
-            {
-                "name": "标记基因全长测序",
-                "path": ""
-            },
-            {
-                "name": "扩增子/功能基因测序",
-                "path": ""
-            },
-            {
-                "name": "宏基因组测序",
-                "path": ""
-            },
-            {
-                "name": "宏转录组测序",
-                "path": ""
-            }
-        ]
-    },
-    {
-        "title": "代谢组",
-        "children": [
-            {
-                "name": "非靶向代谢组",
-                "path": ""
-            },
-            {
-                "name": "靶向代谢组",
-                "path": ""
-            },
-            {
-                "name": "脂质代谢组",
-                "path": ""
-            }
-        ]
-    },
-    {
-        "title": "人基因组",
-        "children": [
-            {
-                "name": "全外显子组测序",
-                "path": ""
-            },
-            {
-                "name": "人基因组重测序",
-                "path": ""
-            },
-            {
-                "name": "目标区域捕获测序",
-                "path": ""
-            }
-        ]
-    },
-    {
-        "title": "蛋白组",
-        "children": [
-            {
-                "name": "定量蛋白质组",
-                "path": ""
-            },
-            {
-                "name": "蛋白质定性分析",
-                "path": ""
-            },
-            {
-                "name": "靶向蛋白质组",
-                "path": ""
-            },
-            {
-                "name": "蛋白质翻译后修饰",
-                "path": ""
-            },
-            {
-                "name": "4D-label free定量蛋白组",
-                "path": ""
-            },
-            {
-                "name": "4D-DIA定量蛋白组",
-                "path": ""
-            }
-        ]
-    }
-]
+{
+    "serviceList": [
+        {
+            "id": "section-1",
+            "title": "转录组",
+            "eng_title": "Transcriptome",
+            "children": [
+                {
+                    "name": "真核有参转录组测序",
+                    "path": "/omicsServicesComponents/Transcribe/Transcribe5"
+                },
+                {
+                    "name": "真核无参转录组测序",
+                    "path": "/omicsServicesComponents/Transcribe/Transcribe4"
+                },
+                {
+                    "name": "原核转录组测序",
+                    "path": "/omicsServicesComponents/Transcribe/Transcribe6"
+                },
+                {
+                    "name": "SmalI RNA测序",
+                    "path": "/omicsServicesComponents/Transcribe/Transcribe1"
+                },
+                {
+                    "name": "LnCRNA测序",
+                    "path": "/omicsServicesComponents/Transcribe/Transcribe2"
+                },
+                {
+                    "name": "CircRNA测序",
+                    "path": "/omicsServicesComponents/Transcribe/Transcribe3"
+                }
+            ]
+        },
+        {
+            "id": "section-2",
+            "title": "微生物组",
+            "eng_title": "Oicrobiome",
+            "children": [
+                {
+                    "name": "群落多样性组成谱测序",
+                    "path": "/omicsServicesComponents/microorganism/microorganism1"
+                },
+                {
+                    "name": "扩增子/功能基因测序",
+                    "path": "/omicsServicesComponents/microorganism/microorganism2"
+                },
+                {
+                    "name": "宏基因组测序",
+                    "path": "/omicsServicesComponents/microorganism/microorganism3"
+                },
+                {
+                    "name": "宏转录组测序",
+                    "path": "/omicsServicesComponents/microorganism/microorganism4"
+                }
+            ]
+        },
+        {
+            "id": "section-6",
+            "title": "表现基因学",
+            "eng_title": "Expressionomics",
+            "children": [
+                {
+                    "name": "Cut&Tag-seq",
+                    "path": "/omicsServicesComponents/Expressionomics/Expressionomics1"
+                },
+                {
+                    "name": "ChIP-Seg",
+                    "path": "/omicsServicesComponents/Expressionomics/Expressionomics2"
+                },
+                {
+                    "name": "全基因组甲基化测序",
+                    "path": "/omicsServicesComponents/Expressionomics/Expressionomics3"
+                }
+            ]
+        },
+        {
+            "id": "section-5",
+            "title": "蛋白代谢检测",
+            "eng_title": "Metabolome",
+            "children": [
+                {
+                    "name": "非靶向代谢组",
+                    "path": "/omicsServicesComponents/proteinMetabolism/proteinMetabolism1"
+                },
+                {
+                    "name": "靶向代谢组",
+                    "path": "/omicsServicesComponents/proteinMetabolism/proteinMetabolism2"
+                },
+                {
+                    "name": "4D-DIA定量蛋白组",
+                    "path": "/omicsServicesComponents/proteinMetabolism/proteinMetabolism3"
+                }
+            ]
+        }
+    ],
+    "unicellularServiceList": [
+        {
+            "id": "section-1",
+            "title": "单细胞",
+            "eng_title": "Transcriptome",
+            "children": [
+                {
+                    "name": "10X 单细胞转录组",
+                    "path": "/omicsServicesComponents/Unicellular/Unicellular1"
+                },
+                {
+                    "name": "空间转录组",
+                    "path": "/omicsServicesComponents/Unicellular/Unicellular2"
+                }
+            ]
+        }
+    ]
+}
