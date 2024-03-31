@@ -73,7 +73,7 @@ body{
   min-height: calc(100% - 300px);
   /* 这里的 [footer-height] 指 footer 的高度，例如 '100px' */
   box-sizing: border-box;
-  padding-bottom: 300px;
+  padding-bottom: 350px;
 }
 @media screen and (max-width: 997px) {
   #contentApp {

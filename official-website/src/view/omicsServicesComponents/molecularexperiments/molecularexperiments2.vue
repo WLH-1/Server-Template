@@ -24,7 +24,7 @@
                     <img src="../../../assets/serverImg/molecularexperiments2/molecularexperiments2_1.png"
                         class="img-responsive" alt="Image">
             </div>
-            <div class="text-center title">服务流程</div>
+            <div class="text-center title">交货内容</div>
                <div class="content">
                     完整的实验报告，包括实验过程、所用仪器试剂、扩增曲线、标准曲线和相关分析数据
                 </div>

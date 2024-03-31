@@ -130,6 +130,7 @@ export default {
   name: "HomePage",
   data() {
     return {
+      cantReset:true,
       serviceList: omicsServices.serviceList,
       unicellularServiceList: omicsServices.unicellularServiceList,
       swiperList: [
@@ -225,12 +226,14 @@ export default {
     },
     getWindowSize() {
       let num = 3
-      if (window.matchMedia("(min-width: 996px)").matches) {
+      if (window.matchMedia("(min-width: 768px)").matches) {
         // 在屏幕宽度大于等于 768px 时执行的代码
         num = 3
       } else {
         // 在屏幕宽度小于 768px 时执行的代码
         num = 1
+        if (!this.cantReset) return
+        this.cantReset = false
       }
       /* customer-swiper */
       new Swiper(".customer-swiper", {
