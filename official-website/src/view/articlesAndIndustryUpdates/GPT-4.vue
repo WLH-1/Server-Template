@@ -9,11 +9,14 @@
                 <div class="col-xs-12 col-sm-12 col-md-6">
                     <div class="content">
                         在单细胞RNA测序分析中，对不同细胞进行准确的类型注释是非常重要的。这个过程往往需要专业知识，通过对比每个细胞群中高表达的基因与已知的细胞类型标记基因来完成。
-                        然而，这一过程不仅繁琐而且耗时。今天要和大家分享的，是在《Nature Methods》新上线的一项研究：使用GPT-4语言模型准确注释单细胞RNA测序（scRNA-seq）分析中的细胞类型。
+                        然而，这一过程不仅繁琐而且耗时。今天要和大家分享的，是在《Nature Methods》新上线的一项研究：
+                        <p style="color: red;">使用GPT-4语言模型准确注释单细胞RNA测序（scRNA-seq）分析中的细胞类型。</p>
                     </div>
+                        <img src="@/assets/pagesImg/GPT4/GPT4-1.png" class="img-responsive">
                     <div class="content">人工智能特别是语言模型在多个领域显示出了巨大的潜力。GPT-4作为一种先进的生成式预训练转换器（Generative Pre-trained
                         Transformer），它在语言理解和生成方面表现出色。研究表明，GPT-4不仅能够在生物医学领域发挥作用，还能通过自动化流程来完成细胞类型的注释工作。</div>
-                    <div class="title">图1：GPT-4细胞类型注释示例以及与其他方法的比较</div>
+                        <img src="@/assets/pagesImg/GPT4/GPT4-2.png" class="img-responsive">
+                        <div class="title">图1：GPT-4细胞类型注释示例以及与其他方法的比较</div>
                     <div class="content">
                         在对GPT-4的评估过程中，研究团队系统性地评估了它在十个数据集上的细胞类型注释性能。这些数据集涵盖了五个物种以及数百种组织和细胞类型。评估的结果显示，GPT-4的注释与原始研究中提供的手动注释高度一致。此外，GPT-4在注释的精确度上明显超过了其他方法，如GPT-3.5和其他一些自动细胞类型注释方法。研究者们开发了一个R软件包GPTCelltype，专门用于GPT-4的自动细胞类型注释。这一工具的使用，显示出比现有方法更高的准确性和速度。它可以快速区分纯净和混合细胞类型，甚至能在输入基因集包含较少基因或受到噪声干扰时，依然保持较高的性能。
                     </div>

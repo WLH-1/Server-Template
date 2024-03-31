@@ -22,8 +22,11 @@
                         另外，乳酸和乳酸化也是一对代谢物与蛋白修饰的组合，当然，乳酸的机制不仅仅局限于乳酸化，它可以通过研究乳酸化摄入蛋白的调控或者细胞内酸化来进行研究。
                         此外还有其它众多机制，详见图1。图1也列出了各篇参考文献，具体的研究方案，请详见文献全文进行仔细学习。
                     </div>
+                        <img src="@/assets/pagesImg/tumorMetabolism/tumorMetabolism1.png" class="img-responsive">
                     <div class="title">图1：代谢物调控T细胞耗竭的机制研究的一些关键问题</div>
                     <div class="content">由于篇幅所限，无法就上述文献一一进行解读。此文仅以一篇文献为例，讲一讲代谢物影响T细胞功能的机制。</div>
+                        <img src="@/assets/pagesImg/tumorMetabolism/tumorMetabolism2.png" class="img-responsive">
+                    
                     <div class="content">这篇文章的研究起点是通过蛋白组学数据进行临床结局的相关性分析，机器学习鉴定到DOCK2与不良的预后相关，
                         而后以DOCK2为起点，往下游筛选互作蛋白验证DOCK2调控T细胞功能的依据，往上游通过肿瘤细胞条件培养基处理以及代谢组学分析鉴定到硫酸软骨素（CS）对DOCK2依赖的T细胞功能的调控作用，
                         又进一步地分析了CS代谢酶SULT2B1的功能，建立了SULT2B1-CS-DOCK2轴对HCC的T细胞耗竭机制的研究。</div>
@@ -32,6 +35,8 @@
                         score，因为CD3蛋白的表达很低，
                         因此用用CD4表达和CD8表达作为T cell score。通过随机森林模型鉴定到DOCK2等蛋白表达与T细胞浸润相关（图2）。DOCK2是一个与淋巴细胞迁移相关的胞质分裂相关激酶，参与CD8
                         T细胞浸润和抗肿瘤作用。 </div>
+                        <img src="@/assets/pagesImg/tumorMetabolism/tumorMetabolism3.png" class="img-responsive">
+
                     <div class="title">图2：机器学习鉴定到DOCK2与T细胞浸润相关</div>
                     <div class="titleMargin">DOCK2失活促进TIL耗竭</div>
                     <div class="content">首先需要明确DOCK2是否在T细胞表达，作者首先分选了小鼠肿瘤和正常肝脏的T细胞，利用wb鉴定DOCK2的表达，
@@ -40,11 +45,15 @@
                         KEGG富集分析显示其富集了TCR信号、细胞因子分泌等通路。通过流式鉴定到CPYPP处理提高TCF-TOX+和PD-1+TIM3+CD8+T细胞，
                         说明DOCK2抑制提高了T细胞耗竭，体外T细胞杀伤实验进一步验证DOCK2抑制降低了T细胞杀伤力。
                         CPYPP处理HCC模型小鼠促进肿瘤进展，降低小鼠生存，降低T细胞浸润和增加T细胞耗竭。作者又构建了Dock2基因敲除小鼠，也获得了一致的结论（图3）。 </div>
-                    <div class="title">图3：DOCK2失活促进HCC</div>
+                        <img src="@/assets/pagesImg/tumorMetabolism/tumorMetabolism4.png" class="img-responsive">
+                    
+                        <div class="title">图3：DOCK2失活促进HCC</div>
                     <div class="titleMargin">DOCK2与TFRC互作维持线粒体稳态</div>
                     <div class="content">
                         为了验证DOCK2促进T细胞耗竭的机制，作者用IP-MS筛选DOCK2的互作蛋白，鉴定到一个线粒体相关蛋白TFRC，因此很自然地将研究关注点注意到线粒体功能上。线粒体的最主要功能是有氧呼吸产生能量，进而对DOCK2抑制剂处理的细胞进行ECAR分析和线粒体形态观察，以及线粒体功能相关基因的富集分析。作者也敲除了TFRC基因，同样也因此你T细胞耗竭。而DOCK2活性影响了与TFRC的互作，进而影响TFRC蛋白降解（图4）。此处作者对DOCK2的功能做了深入的分析，A蛋白的活性影响其于B蛋白的互作，进而影响B蛋白的降解，这是一个相当精致的机制。不过总体而言，文章没有进一步地研究线粒体稳态对T细胞耗竭机制的深入分析。当然，其实该研究的重心在DOCK2的上游，关注肿瘤细胞如何影响T细胞的DOCK2，这也是一个不错的策略。
                     </div>
+                        <img src="@/assets/pagesImg/tumorMetabolism/tumorMetabolism5.png" class="img-responsive">
+
                     <div class="title">图4：DOCK2-TFRC调控线粒体稳态促进T细胞耗竭</div>
                     <div class="titleMargin">肿瘤来源的CS促进DOCK2失活</div>
                     <div class="content">作者将目标聚焦到了DOCK2失活的机制上，因此将目光转移到肿瘤细胞，将肿瘤细胞和T细胞共培养，
@@ -52,15 +61,21 @@
                         作者首先对肿瘤细胞的培养上清做了代谢组学测定，在上调的代谢物中，CS曾被报道可以抑制DOCK2活性，
                         因此将研究靶点落脚在CS上。首先用CS处理T细胞，发现处理后确实可以降低DOCK2活性以及促进T细胞耗竭。
                         而后用CS处理小鼠，确实小鼠的肿瘤生长更快，生存更差；以及T细胞浸润更少，T细胞耗竭更多。而后又用质谱流式进一步验证（图5）。 </div>
-                    <div class="title">图5：CS抑制DOCK2活性，引起T细胞耗竭 </div>
+                        <img src="@/assets/pagesImg/tumorMetabolism/tumorMetabolism6.png" class="img-responsive">
+                    
+                        <div class="title">图5：CS抑制DOCK2活性，引起T细胞耗竭 </div>
                     <div class="titleMargin">CS上游的SULT2B1作为新靶点进行机制和治疗靶点的探索</div>
                     <div class="content">
                         作者进一步地往上游探索。就代谢物而言，往上游探索是相对容易的思路，可以聚焦于代谢酶，分析代谢酶对关注表型，即T细胞耗竭、抗肿瘤作用的影响。作者关注到了SUTL2B1这个CS合成酶，分析了SUTL2B1的蛋白表达以及与预后的关系，然后敲除SUTL2B1，检测CS的含量、T细胞耗竭和小鼠生存等表型，确定SULT2B1的生物学作用（图6）。
                     </div>
+                        <img src="@/assets/pagesImg/tumorMetabolism/tumorMetabolism7.png" class="img-responsive">
+                
                     <div class="title">图6：SULT2B1调控CS合成，促进T细胞耗竭</div>
                     <div class="content">
                         而后作者针对SULT2B1筛选可能的靶向药物和小分子药物，分别明确APAP和THCL作为可能的药物用于靶向CS合成通路，进而促进T细胞浸润和抑制T细胞耗竭。针对这两个药物处理检测了CS含量和小鼠的预后分析，明确其在临床应用的潜在价值（图7）
                     </div>
+                        <img src="@/assets/pagesImg/tumorMetabolism/tumorMetabolism8.png" class="img-responsive">
+
                     <div class="title">图7：靶向CS合成通路的临床应用探索</div>
                     <div class="content">通过大队列研究进行标志物的筛选，是目前一个重要的研究方向，但是当筛选到标志物后怎么进行后续的机制研究，尝尝困扰很多临床医生。
                         这一篇文章提供了一个很不错的示例。因为临床结局是T细胞浸润，因此机制研究的表型分析就是T细胞的那一套，

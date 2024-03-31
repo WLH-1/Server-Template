@@ -1,7 +1,6 @@
 {
     "serviceList": [
         {
-            "id": "section-1",
             "title": "转录组",
             "eng_title": "Transcriptome",
             "children": [
@@ -32,7 +31,6 @@
             ]
         },
         {
-            "id": "section-2",
             "title": "微生物组",
             "eng_title": "Oicrobiome",
             "children": [
@@ -55,7 +53,6 @@
             ]
         },
         {
-            "id": "section-6",
             "title": "表现基因学",
             "eng_title": "Expressionomics",
             "children": [
@@ -74,7 +71,6 @@
             ]
         },
         {
-            "id": "section-5",
             "title": "蛋白代谢检测",
             "eng_title": "Metabolome",
             "children": [
@@ -95,7 +91,6 @@
     ],
     "unicellularServiceList": [
         {
-            "id": "section-1",
             "title": "单细胞",
             "eng_title": "Transcriptome",
             "children": [
@@ -106,6 +101,30 @@
                 {
                     "name": "空间转录组",
                     "path": "/omicsServicesComponents/Unicellular/Unicellular2"
+                }
+            ]
+        }
+    ],
+    "MolecularExperimentsList":[
+        {
+            "title": "常规分子实验",
+            "eng_title": "MolecularExperiments",
+            "children": [
+                {
+                    "name": "物种鉴定",
+                    "path": "/omicsServicesComponents/molecularexperiments/molecularexperiments1"
+                },
+                {
+                    "name": "荧光定量PCR",
+                    "path": "/omicsServicesComponents/molecularexperiments/molecularexperiments2"
+                },
+                {
+                    "name": "SNP分型",
+                    "path": "/omicsServicesComponents/molecularexperiments/molecularexperiments3"
+                },
+                {
+                    "name": "甲基化（BSP、NGS-BSP）",
+                    "path": "/omicsServicesComponents/molecularexperiments/molecularexperiments4"
                 }
             ]
         }

@@ -91,7 +91,7 @@ export default {
         },
         {
           name: "分子实验",
-          path: "/newsinformation",
+          path: "/molecularexperiments",
           children: []
         },
         // {

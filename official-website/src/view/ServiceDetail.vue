@@ -34,7 +34,6 @@ export default {
             leftIndex: 0,
             serverItem: JSON.parse(sessionStorage.getItem('serverItem')),
             serverChild : JSON.parse(sessionStorage.getItem('serverChild')),
-            title: '123'
         }
     },
     mounted() {
@@ -113,7 +112,7 @@ export default {
 .left-container>li {
     text-align: center;
     padding: 0 24px;
-    height: 38px;
+    height: auto;
     line-height: 38px;
     margin: 0;
     border-top: 1px solid #474747;
