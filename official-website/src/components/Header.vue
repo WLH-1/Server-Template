@@ -24,10 +24,10 @@
         </router-link>
       </div>
       <!-- 导航内容 -->
-      <ul class="header-nav-wrapper">
+      <ul class="header-nav-wrapper" :key="rfresh">
         <li v-for="(item, index) in navList" :key="index" :class="index == navIndex ? 'active' : ''"
           @click="navClick(index, item.name)">
-          <router-link :to="item.path">
+          <router-link :to="item.path" >
             {{ item.name }}
             <span v-if="item.children.length > 0" class="glyphicon glyphicon-chevron-up"></span>
             <i class="underline"></i>
@@ -78,6 +78,7 @@ export default {
     return {
       navIndex: sessionStorage.getItem('navIndex') ? sessionStorage.getItem('navIndex') : 0,
       menuClass: "glyphicon glyphicon-align-justify",
+      rfresh:-1,
       navList: [
         {
           name: "首页",
@@ -113,19 +114,27 @@ export default {
     };
   },
   computed: {
-    ...mapState(['scrollType']),
+    ...mapState(['scrollType', 'navName']),
   },
   watch: {
-    scrollType(old, val) {
-      this.handleScroll(val)
+    scrollType(newVal, oldVal) {
+      this.handleScroll(newVal)
+    },
+    navName(newVal, oldVal) {
+      this.changeNav(newVal)
     }
   },
   mounted() {
-   
   },
   destroyed() {
   },
   methods: {
+    changeNav(name) {
+      this.navIndex = this.navList.findIndex((x)=> x.name == name);
+      sessionStorage.setItem('navIndex', this.navIndex)
+      this.$emit('toTop')
+      this.rfresh = Math.random()
+    },
     handleScroll(val) {
       // 处理滚动事件
       var contentElement = document.getElementById('header');

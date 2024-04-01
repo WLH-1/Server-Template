@@ -26,7 +26,7 @@
           <div class="bigData-content">成都启林未来科技有限公司, 成立于2021年, 是一家锐意进取的生物科技企业, 专注于运用最前沿的分子生物学检测技术和先进的生物信息分析技术,
             为全球科研机构及企业提供一站式、全方位的生命科学科研解决方案。公司矢志不渝地追求科技创新,
             旨在成为生命科学研究领域以及人类健康事业的卓越贡献者, 提供领先且具有影响力的科技产品与专业服务, 赋能科研进步, 共筑健康未来。</div>
-          <a href="/#/companyintroduction" class="btn btn-lg btn-block btn-info">了解更多</a>
+            <a href="/#/companyintroduction" @click="changeNav('关于我们')" class="btn btn-lg btn-block btn-info">了解更多</a>
         </div>
       </div>
     </div>
@@ -81,7 +81,8 @@
           <!-- <p>PARTNER</p> -->
         </div>
         <div class="row" style="display: flex; justify-content: center;">
-          <div class="col-xs-12 col-md-6 col-md-3 server-wrapper" v-for="(item, index) in industryTrends" :key="index" @click="toArticlesAndIndustryUpdates(item.path)">
+          <div class="col-xs-12 col-md-6 col-md-3 server-wrapper" v-for="(item, index) in industryTrends" :key="index"
+            @click="toArticlesAndIndustryUpdates(item.path)">
             <div class="server-block wow slideInUp" onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
               onmouseleave="this.style.color='#666';this.style.borderColor='#ccc'">
               <div class="center-block"
@@ -130,7 +131,7 @@ export default {
   name: "HomePage",
   data() {
     return {
-      cantReset:true,
+      cantReset: true,
       serviceList: omicsServices.serviceList,
       unicellularServiceList: omicsServices.unicellularServiceList,
       swiperList: [
@@ -138,7 +139,7 @@ export default {
           img: require("@/assets/img/home-banner-bg.jpg"),
           path: "",
           title: '专业分子生物学检测',
-          content: '致力于为生命科学研究和人类健康提供领先的科技产品和服务提供者',
+          content: '致力于为生命科学研究和人类健康提供领先的科技产品和服务',
         },
       ],
       customerList: [
@@ -178,7 +179,7 @@ export default {
           title: "GPT-4与单细胞测序结合：对细胞类型进行注释",
           content: "使用GPT-4语言模型准确注释单细胞RNA测序（scRNA-seq）分析中的细胞类型",
           imgTitle: "GPT-4",
-          path:"/GPT-4"
+          path: "/GPT-4"
         }
       ],
       industryTrends: [
@@ -214,6 +215,12 @@ export default {
     wow.init();
   },
   methods: {
+    changeNav(name) {
+      this.$store.commit('setNavName', "首页");
+      setTimeout(() => {
+      this.$store.commit('setNavName', name);
+      },100)
+    },
     toArticlesAndIndustryUpdates(path) {
       this.$router.push(path);
     },
@@ -223,6 +230,10 @@ export default {
       let list = [...this.serviceList, ...this.unicellularServiceList]
       sessionStorage.setItem("serverItem", JSON.stringify(list[item.index]))
       sessionStorage.setItem("serverChild", JSON.stringify(list[item.index].children[0]))
+      this.$store.commit('setNavName', "首页");
+      setTimeout(() => {
+        this.$store.commit('setNavName', '组学服务');
+      }, 100)
     },
     getWindowSize() {
       let num = 3

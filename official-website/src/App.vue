@@ -42,18 +42,6 @@ export default {
         this.$store.commit('setScrollType', event.deltaY);
       }
     },
-    navClick(index, name) {
-      this.navIndex = index;
-      sessionStorage.setItem('navIndex', index)
-      this.menuName = name;
-    },
-    menuClick() {
-      if (this.menuClass == "glyphicon glyphicon-menu-down") {
-        this.menuClass = "glyphicon glyphicon-menu-up";
-      } else {
-        this.menuClass = "glyphicon glyphicon-menu-down";
-      }
-    }
   }
 }
 </script>
