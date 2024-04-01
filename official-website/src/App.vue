@@ -1,6 +1,6 @@
 <template>
   <div @wheel="handleWheel" id="app">
-    <Header @toTop="GoTop"></Header>
+    <Header @toTop="GoTop" @toBottom="GoBottom"></Header>
     <div id="contentApp">
       <router-view />
     </div>
@@ -36,6 +36,34 @@ export default {
           window.scrollTo(0, 0);
         }
       })();
+    },
+    GoBottom() {
+      const scrollHeight = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight
+      );
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      const scrollBottom = scrollHeight - windowHeight;
+
+      const scrollStep = 100; // 每次滚动的距离
+      let scrollPosition = window.pageYOffset;
+
+      function smoothScroll() {
+        if (scrollPosition < scrollBottom) {
+          window.scrollTo(0, scrollPosition);
+          scrollPosition += scrollStep;
+          if (scrollPosition > scrollBottom) {
+            scrollPosition = scrollBottom;
+          }
+          window.requestAnimationFrame(smoothScroll);
+        } else if (scrollPosition >= scrollBottom) {
+          window.scrollTo(0, scrollHeight); // 滚动到页面的真正底部
+          // 滚动到底部后执行的操作
+          // 在这里添加你需要执行的代码
+        }
+      }
+
+      smoothScroll();
     },
     handleWheel(event) {
       if (event) {

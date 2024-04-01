@@ -27,15 +27,15 @@
       <ul class="header-nav-wrapper" :key="rfresh">
         <li v-for="(item, index) in navList" :key="index" :class="index == navIndex ? 'active' : ''"
           @click="navClick(index, item.name)">
-          <router-link :to="item.path" >
+          <router-link :to="item.path">
             {{ item.name }}
             <span v-if="item.children.length > 0" class="glyphicon glyphicon-chevron-up"></span>
             <i class="underline"></i>
           </router-link>
           <dl v-if="item.children.length > 0">
-              <dt v-for="(i, n) in item.children" :key="n">
-                <router-link :to="i.path">{{ i.name }}</router-link>
-              </dt>
+            <dt v-for="(i, n) in item.children" :key="n">
+              <router-link :to="i.path">{{ i.name }}</router-link>
+            </dt>
           </dl>
         </li>
       </ul>
@@ -43,13 +43,13 @@
     <!-- 手机导航 -->
     <div class="header-nav-m container-fuild visible-xs">
       <div style="display: flex; justify-content: space-between; align-items: center; padding: 0 30px;">
-        <div class="header-nav-m-logo" >
+        <div class="header-nav-m-logo">
           <router-link :to="'/'">
-          <img class="center-block" src="@/assets/img/qilin_logo.png" alt="logo" @click="toHome">
+            <img class="center-block" src="@/assets/img/qilin_logo.png" alt="logo" @click="toHome">
           </router-link>
         </div>
         <div data-toggle="collapse" data-target="#menu" @click="menuClick">
-            <span :class="menuClass"></span>
+          <span :class="menuClass"></span>
         </div>
       </div>
       <!-- 导航栏 -->
@@ -78,7 +78,7 @@ export default {
     return {
       navIndex: sessionStorage.getItem('navIndex') ? sessionStorage.getItem('navIndex') : 0,
       menuClass: "glyphicon glyphicon-align-justify",
-      rfresh:-1,
+      rfresh: -1,
       navList: [
         {
           name: "首页",
@@ -95,11 +95,24 @@ export default {
           path: "/molecularexperiments",
           children: []
         },
-        // {
-        //   name: "生信服务",
-        //   path: "/newsinformation",
-        //   children: []
-        // },
+        {
+          name: "生信服务",
+          path: "",
+          children: [
+            {
+              name: "实验课题设计",
+              path: "",
+            },
+            {
+              name: "测序和质谱数据标准及个性化分析",
+              path: "",
+            },
+            {
+              name: "Meta数据分析",
+              path: "",
+            },
+          ]
+        },
         {
           name: "关于我们",
           path: "/companyintroduction",
@@ -110,6 +123,11 @@ export default {
         //   path: "/newsinformation",
         //   children: []
         // },
+        {
+          name: "联系我们",
+          path: "",
+          children: []
+        },
       ]
     };
   },
@@ -130,7 +148,7 @@ export default {
   },
   methods: {
     changeNav(name) {
-      this.navIndex = this.navList.findIndex((x)=> x.name == name);
+      this.navIndex = this.navList.findIndex((x) => x.name == name);
       sessionStorage.setItem('navIndex', this.navIndex)
       this.$emit('toTop')
       this.rfresh = Math.random()
@@ -138,7 +156,7 @@ export default {
     handleScroll(val) {
       // 处理滚动事件
       var contentElement = document.getElementById('header');
-      if (val > 0 && document.documentElement.scrollTop != 0 || document.documentElement.scrollTop>0) {
+      if (val > 0 && document.documentElement.scrollTop != 0 || document.documentElement.scrollTop > 0) {
         // 向下滚
         contentElement.style.position = '';
         contentElement.style.padding = '';
@@ -160,10 +178,14 @@ export default {
       this.$emit('toTop')
     },
     navClick(index, name) {
-      this.menuClick()
-      this.navIndex = index;
-      sessionStorage.setItem('navIndex', index)
-      this.$emit('toTop')
+       this.menuClick()
+        this.navIndex = index;
+        sessionStorage.setItem('navIndex', index)
+      if (name == '联系我们') {
+        this.$emit('toBottom')
+      } else {
+        this.$emit('toTop')
+      }
     },
     menuClick() {
       if (this.menuClass == "glyphicon glyphicon-align-justify") {
@@ -326,7 +348,7 @@ export default {
 }
 
 @media screen and (min-width: 768px) and (max-width: 996px) {
-    #header .header-nav .header-nav-logo img {
+  #header .header-nav .header-nav-logo img {
     width: auto;
     height: 40px;
     position: absolute;
@@ -412,4 +434,5 @@ export default {
   #header .header-nav .header-nav-wrapper>li>a>span {
     font-size: 10px;
   }
-}</style>
+}
+</style>

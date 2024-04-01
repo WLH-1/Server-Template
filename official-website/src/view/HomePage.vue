@@ -15,8 +15,8 @@
     <!-- 关于我们 -->
     <div id="bigData" class="container-fuild">
       <div class="row bigData-container">
-        <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn">
-          <img class="img-responsive" src="@/assets/img/img1.png" alt="">
+        <div class="col-xs-12 col-sm-12 col-md-6 wow zoomIn" style="display: flex;justify-content: center;">
+          <img class="img-responsive" style="" src="@/assets/img/home-banner-bg6.png" alt="">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6">
           <h2 class="bigData-title">
@@ -26,7 +26,7 @@
           <div class="bigData-content">成都启林未来科技有限公司, 成立于2021年, 是一家锐意进取的生物科技企业, 专注于运用最前沿的分子生物学检测技术和先进的生物信息分析技术,
             为全球科研机构及企业提供一站式、全方位的生命科学科研解决方案。公司矢志不渝地追求科技创新,
             旨在成为生命科学研究领域以及人类健康事业的卓越贡献者, 提供领先且具有影响力的科技产品与专业服务, 赋能科研进步, 共筑健康未来。</div>
-            <a href="/#/companyintroduction" @click="changeNav('关于我们')" class="btn btn-lg btn-block btn-info">了解更多</a>
+          <a href="/#/companyintroduction" @click="changeNav('关于我们')" class="btn btn-lg btn-block btn-info">了解更多</a>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
       </div>
     </div>
     <!-- 为什么选择我们 -->
-    <div id="whyChooseUs" class="conatiner-fuild">
+    <div id="whyChooseUs" class="conatiner-fuild center-block">
       <div class="container">
         <div class="whyChooseUs-title text-center">
           <p>文献解读</p>
@@ -218,8 +218,8 @@ export default {
     changeNav(name) {
       this.$store.commit('setNavName', "首页");
       setTimeout(() => {
-      this.$store.commit('setNavName', name);
-      },100)
+        this.$store.commit('setNavName', name);
+      }, 100)
     },
     toArticlesAndIndustryUpdates(path) {
       this.$router.push(path);
@@ -332,6 +332,15 @@ export default {
   text-indent: 2em;
 }
 
+#bigData .bigData-container {
+  display: flex;
+  align-items: center;
+}
+#bigData .bigData-container>div>img {
+  width: 500px;
+  height: 350px;
+}
+
 #bigData a {
   margin-top: 20px;
 }
@@ -431,7 +440,7 @@ export default {
 
 /* 为什么选择我们 */
 #whyChooseUs {
-  padding: 50px 100px;
+  padding: 50px 0;
 }
 
 #whyChooseUs .whyChooseUs-title {
@@ -496,6 +505,16 @@ export default {
     font-size: 20px;
     margin: 10px 0 10px;
   }
+
+  #bigData .bigData-container {
+    display: block;
+  }
+
+  #bigData .bigData-container>div>img {
+    width: auto;
+    height: auto;
+  }
+
 
   #contactUs {
     height: 200px;
@@ -606,6 +625,13 @@ export default {
   #bigData .bigData-device {
     font-size: 30px;
     margin: 30px 0 15px;
+  }
+
+  #bigData .bigData-container {}
+
+    #bigData .bigData-container>div>img {
+    width: auto;
+    height: auto;
   }
 
   #contactUs {
