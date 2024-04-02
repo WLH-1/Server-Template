@@ -243,6 +243,15 @@ export default new Router({
           }
         },
         {
+          path: "/perkhidmatanbio-maklumat",
+          name: "perkhidmatanbio-maklumat",
+          component: resolve =>
+            require(["@/view/perkhidmatanBio-maklumat"], resolve),
+          meta: {
+            title: "生信服务"
+          }
+        },
+        {
           path: "/companyintroduction",
           name: "companyintroduction",
           component: resolve =>

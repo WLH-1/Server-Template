@@ -32,7 +32,7 @@
 import { WOW } from 'wowjs';
 import omicsServices from "../data/omicsServices.json";
 export default {
-    name: 'Service',
+    name: 'molecularexperiments',
     data() {
         return {
             MolecularExperimentsList: omicsServices.MolecularExperimentsList,

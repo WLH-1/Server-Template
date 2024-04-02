@@ -97,21 +97,8 @@ export default {
         },
         {
           name: "生信服务",
-          path: "",
-          children: [
-            {
-              name: "实验课题设计",
-              path: "",
-            },
-            {
-              name: "测序和质谱数据标准及个性化分析",
-              path: "",
-            },
-            {
-              name: "Meta数据分析",
-              path: "",
-            },
-          ]
+          path: "/perkhidmatanbio-maklumat",
+          children: []
         },
         {
           name: "关于我们",

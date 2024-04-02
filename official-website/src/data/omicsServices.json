@@ -105,7 +105,7 @@
             ]
         }
     ],
-    "MolecularExperimentsList":[
+    "MolecularExperimentsList": [
         {
             "title": "常规分子实验",
             "eng_title": "MolecularExperiments",
@@ -125,6 +125,26 @@
                 {
                     "name": "甲基化（BSP、NGS-BSP）",
                     "path": "/omicsServicesComponents/molecularexperiments/molecularexperiments4"
+                }
+            ]
+        }
+    ],
+    "perkhidmatanBiomaklumat": [
+        {
+            "title": "生信服务",
+            "eng_title": "perkhidmatanbio-maklumat",
+            "children": [
+                {
+                    "name": "实验课题设计",
+                    "path": ""
+                },
+                {
+                    "name": "测序和质谱数据标准及个性化分析",
+                    "path": ""
+                },
+                {
+                    "name": "Meta数据分析",
+                    "path": ""
                 }
             ]
         }
