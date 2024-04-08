@@ -81,7 +81,7 @@ export default {
 .banner {
     color: #fff;
     font-size: 30px;
-    height: 150px;
+    height: 200px;
     line-height: 150px;
     background-image: url('../assets/img/banner_usually.png');
     background-repeat: no-repeat;

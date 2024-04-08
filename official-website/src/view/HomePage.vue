@@ -139,7 +139,7 @@ export default {
           img: require("@/assets/img/home-banner-bg.jpg"),
           path: "",
           title: '专业分子生物学检测',
-          content: '致力于为生命科学研究和人类健康提供领先的科技产品和服务',
+          content: '致力于为生命科学研究和人类健康提供优质的科技产品和服务',
         },
       ],
       customerList: [

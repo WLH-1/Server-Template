@@ -7,7 +7,7 @@
       </div>
       <div class="flex_tb" style="margin-left: 32px;">
         <p class="" style="font-size: 18px;width: max-content;">产品与服务</p>
-        <div v-for="(item, index) in customerList" :key="index" >
+        <div v-for="(item, index) in customerList" :key="index">
           <router-link :to=item.path>
             <p @click="toServiceDetail(item)" class="address_tel_fax">{{ item.title }}</p>
           </router-link>
@@ -16,16 +16,19 @@
       <div class="flex_tb" style="margin-left: 32px;">
         <!-- toMolecularExperimentsServiceDetail -->
         <p class="" style="font-size: 18px;width: max-content;">分子实验</p>
-       <div v-for="(item, index) in customerList2" :key="index" >
-            <router-link :to=item.path>
-              <p @click="toMolecularExperimentsServiceDetail(item)" class="address_tel_fax">{{ item.title }}</p>
-            </router-link>
-          </div>
+        <div v-for="(item, index) in customerList2" :key="index">
+          <router-link :to=item.path>
+            <p @click="toMolecularExperimentsServiceDetail(item)" class="address_tel_fax">{{ item.title }}</p>
+          </router-link>
+        </div>
       </div>
       <div class="flex_tb" style="margin-left: 32px;">
         <p class="" style="font-size: 18px;">联系我们</p>
         <p class="address_tel_fax">
           <span>地址：中国（四川）自由贸易试验区成都高新区天府三街69号1栋19层1920号</span>
+        </p>
+        <p class="address_tel_fax">
+          <span>蜀ICP备2024067583号-1</span>
         </p>
         <p class="address_tel_fax">
           <span>邮箱：huangqy_ql@sina.com</span>
