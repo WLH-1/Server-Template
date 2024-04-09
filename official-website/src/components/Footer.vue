@@ -27,16 +27,20 @@
         <p class="address_tel_fax">
           <span>地址：中国（四川）自由贸易试验区成都高新区天府三街69号1栋19层1920号</span>
         </p>
-        <p class="address_tel_fax">
-          <span>蜀ICP备2024067583号-1</span>
-        </p>
+
         <p class="address_tel_fax">
           <span>邮箱：huangqy_ql@sina.com</span>
         </p>
         <p class="address_tel_fax">
           <span>微信号：think-more-see-all</span>
         </p>
-        <p class="copy">Copyright &copy; 2021 - {{ new Date().getFullYear() }} 成都启林未来科技有限公司
+        <p class="address_tel_fax">
+          <span class="copy">Copyright &copy; 2021 - {{ new Date().getFullYear() }} 成都启林未来科技有限公司
+          </span>
+          <span style="padding: 0 5px;"> | </span>
+          <span>
+            <a href="https://beian.miit.gov.cn" style="color: #d3d3d3;">蜀ICP备2024067583号-1</a>
+          </span>
         </p>
       </div>
     </div>
@@ -58,6 +62,7 @@
         </p>
         <p class="copy">Copyright &copy; 2021 - {{ new Date().getFullYear() }} 成都启林未来科技有限公司
         </p>
+         <a href="https://beian.miit.gov.cn" style="color: #d3d3d3;">蜀ICP备2024067583号-1</a>
       </div>
     </div>
   </div>
@@ -195,6 +200,8 @@ export default {
 }
 
 .address_tel_fax {
+  display: flex;
+  justify-content: center;
   color: #d3d3d3;
   font-size: 14px;
   width: max-content;
