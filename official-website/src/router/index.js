@@ -295,7 +295,17 @@ export default new Router({
           meta: {
             title: "GPT-4"
           }
+        },
+        {
+          path: "/stemCellIntervention",
+          name: "stemCellIntervention",
+          component: resolve =>
+            require(["@/view/articlesAndIndustryUpdates/stemCellIntervention"], resolve),
+          meta: {
+            title: "干细胞干预"
+          }
         }
+        // 
       ]
     }
   ]

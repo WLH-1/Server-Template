@@ -80,7 +80,7 @@
           <p>文献解读</p>
           <!-- <p>PARTNER</p> -->
         </div>
-        <div class="row" style="display: flex; justify-content: center;">
+        <div class="row" style="">
           <div class="col-xs-12 col-md-6 col-md-3 server-wrapper" v-for="(item, index) in industryTrends" :key="index"
             @click="toArticlesAndIndustryUpdates(item.path)">
             <div class="server-block wow slideInUp" onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
@@ -103,7 +103,7 @@
           <p>行业动态</p>
           <!-- <p>PARTNER</p> -->
         </div>
-        <div class="row" style="display: flex; justify-content: center;">
+        <div class="row" style="">
           <div class="col-xs-12 col-md-6 col-md-3 server-wrapper" v-for="(item, index) in literatureInterpretation"
             :key="index" @click="toArticlesAndIndustryUpdates(item.path)">
             <div class="server-block wow slideInUp" onmouseenter="this.style.color='#28f';this.style.borderColor='#28f'"
@@ -180,6 +180,12 @@ export default {
           content: "使用GPT-4语言模型准确注释单细胞RNA测序（scRNA-seq）分析中的细胞类型",
           imgTitle: "GPT-4",
           path: "/GPT-4"
+        },
+        {
+          title: "干细胞干预痛风的作用机制及研究案例",
+          content: "利用干细胞干预痛风的治疗，或有望成为痛风及并发症治疗的新选择。",
+          imgTitle: "干细胞干预",
+          path: "/stemCellIntervention"
         }
       ],
       industryTrends: [
@@ -336,6 +342,7 @@ export default {
   display: flex;
   align-items: center;
 }
+
 #bigData .bigData-container>div>img {
   width: 500px;
   height: 350px;
@@ -441,6 +448,11 @@ export default {
 /* 为什么选择我们 */
 #whyChooseUs {
   padding: 50px 0;
+}
+
+#whyChooseUs .container .row {
+  display: flex;
+  justify-content: center;
 }
 
 #whyChooseUs .whyChooseUs-title {
@@ -578,6 +590,10 @@ export default {
     transition: all ease 0.6s;
   }
 
+  #whyChooseUs .container .row {
+    display: block;
+  }
+
   #whyChooseUs .whyChooseUs-title p:nth-of-type(1) {
     font-size: 20px;
     font-weight: 700;
@@ -629,7 +645,7 @@ export default {
 
   #bigData .bigData-container {}
 
-    #bigData .bigData-container>div>img {
+  #bigData .bigData-container>div>img {
     width: auto;
     height: auto;
   }
