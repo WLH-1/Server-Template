@@ -4,11 +4,19 @@ import { DemoController } from './demo.controller';
 
 import { DemoMiddleware, DemoOtherMiddleware } from 'src/common/middleware/demo.middleware';
 
+// import { Staff, StaffSchema } from 'src/models/staff.schema';
 
-
+// 有此模块整合后统一在根模块暴露
 @Module({
   // 用于引入字段表
-  imports: [],
+  imports: [
+    // MongooseModule.forFeature(
+    //   [
+    //     { name: Staff.name, schema: StaffSchema, collection: 'staff' },
+    //   ],
+    //   'commDB',
+    // ),
+  ],
   // 用于引入控制器
   controllers: [DemoController],
   // 用于引入服务,或者一些公共函数等
