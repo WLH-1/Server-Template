@@ -2,8 +2,9 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { InitMiddleware } from './common/middleware/init.middleware';
 import { ValidationPipe } from './common/pipes/validation.pipe';
+import { Reflector } from '@nestjs/core';
 
-import { AuthGuard } from './common/guards/auth.guard'
+import { JwtAuthGuard } from './common/guards/auth.guard'
 
 
 async function bootstrap() {
@@ -21,8 +22,9 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe()); //接口参数验证管道，验证数据合法性
 
+  let reflector = new Reflector();
   // 全局使用守卫
-  app.useGlobalGuards(new AuthGuard())
+  app.useGlobalGuards(new JwtAuthGuard(reflector))
 
 
   await app.listen(3000);
