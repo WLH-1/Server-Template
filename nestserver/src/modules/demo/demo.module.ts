@@ -1,21 +1,21 @@
 import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 import { DemoService } from './demo.service';
 import { DemoController } from './demo.controller';
-
 import { DemoMiddleware, DemoOtherMiddleware } from 'src/common/middleware/demo.middleware';
+import { User, UserSchema } from 'src/models/user.schema';
+import { MongooseModule } from '@nestjs/mongoose';
 
-// import { Staff, StaffSchema } from 'src/models/staff.schema';
 
 // 有此模块整合后统一在根模块暴露
 @Module({
   // 用于引入字段表
   imports: [
-    // MongooseModule.forFeature(
-    //   [
-    //     { name: Staff.name, schema: StaffSchema, collection: 'staff' },
-    //   ],
-    //   'commDB',
-    // ),
+    MongooseModule.forFeature(
+      [
+        { name: User.name, schema: UserSchema, collection: 'user' }
+      ],
+      'work',
+    ),
   ],
   // 用于引入控制器
   controllers: [DemoController],
@@ -39,5 +39,4 @@ export class DemoModule {
         }
     );
   }
-  
 }

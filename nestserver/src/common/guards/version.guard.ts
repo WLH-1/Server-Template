@@ -6,7 +6,6 @@ import {
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { AuthGuard } from '@nestjs/passport';
-import { myRedisUtil } from 'src/util/redis.util';
 import Key from 'src/config/env';
 const rp = require('request-promise');
 

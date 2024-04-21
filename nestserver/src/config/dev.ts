@@ -1,8 +1,7 @@
 export default {
   port: 3001,
   jwtSecret: 'nest-server',
-  ebuyDBUrl:
-    'mongodb://192.168.6.38:27018,192.168.6.38:27019,192.168.6.38:27020/ir',
+  nestDBUrl:'mongodb+srv://admin:admin123@work.zlmrxot.mongodb.net/work?retryWrites=true&w=majority',
   redisOption: {
     host: '192.168.6.38',
     // host: '127.0.0.1',
