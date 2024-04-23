@@ -26,5 +26,5 @@ export class DemoController {
     @Get('/add')
     add123(@Query() query) {
         return this.demoServer.add123(query)
-    }
+    } 
 }

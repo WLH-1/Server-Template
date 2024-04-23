@@ -1,9 +1,9 @@
 import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
-import { DemoService } from './demo.service';
 import { DemoController } from './demo.controller';
-import { DemoMiddleware, DemoOtherMiddleware } from 'src/common/middleware/demo.middleware';
+import { DemoService } from './demo.service';
 import { User, UserSchema } from 'src/models/user.schema';
 import { MongooseModule } from '@nestjs/mongoose';
+import { DemoMiddleware, DemoOtherMiddleware } from 'src/common/middleware/demo.middleware';
 
 
 // 有此模块整合后统一在根模块暴露
@@ -14,7 +14,7 @@ import { MongooseModule } from '@nestjs/mongoose';
       [
         { name: User.name, schema: UserSchema, collection: 'user' }
       ],
-      'work',
+      'nestDB', // 这里的数据库连接名称要与你的设置相匹配
     ),
   ],
   // 用于引入控制器
