@@ -5,6 +5,7 @@ import { ValidationPipe } from './common/pipes/validation.pipe';
 import { Reflector } from '@nestjs/core';
 
 import { JwtAuthGuard } from './common/guards/auth.guard'
+import Key from './config/env';
 
 
 async function bootstrap() {
@@ -26,7 +27,6 @@ async function bootstrap() {
   // 全局使用守卫
   app.useGlobalGuards(new JwtAuthGuard(reflector))
 
-
-  await app.listen(3000);
+  await app.listen(Key.port);
 }
 bootstrap();

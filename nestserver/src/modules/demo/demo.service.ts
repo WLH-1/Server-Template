@@ -11,11 +11,7 @@ export class DemoService {
         @InjectModel(User.name)
         private readonly userModel: Model<UserDocument>,
     ){}
-
     add123(query) {
-        return [
-            {...query},
-            {title:''}
-        ]
+        return this.userModel.find()
     }
 }

@@ -12,9 +12,7 @@ import Key from './config/env';
 @Module({
   imports: [
     ConfigModule.load(resolve(__dirname, 'config', '**/!(*.d).{ts,js}')),
-    MongooseModule.forRoot(Key.nestDBUrl, {
-      connectionName: 'nestDB',
-    }),
+    MongooseModule.forRoot(Key.nestDBUrl),
     DemoModule,
     UploadModule,
     ScheduleModule.forRoot(),

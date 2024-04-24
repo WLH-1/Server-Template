@@ -13,8 +13,7 @@ import { DemoMiddleware, DemoOtherMiddleware } from 'src/common/middleware/demo.
     MongooseModule.forFeature(
       [
         { name: User.name, schema: UserSchema, collection: 'user' }
-      ],
-      'nestDB', // 这里的数据库连接名称要与你的设置相匹配
+      ]
     ),
   ],
   // 用于引入控制器
