@@ -6,7 +6,12 @@ import { query } from 'express';
 
 // 添加自定义元数据标记，表示此路由为公开接口
 import { Public } from 'src/common/decorator/public.decorator';
-
+import {
+    Response,
+    Requestparameter,
+    Headerparameter,
+} from 'src/common/interfaces/api.interface';
+import { UserQueryDTO } from './dto/demo.dto'
 
 @Controller('demo')
 // 控制器中使用守卫，一般用于权限判断
@@ -24,7 +29,9 @@ export class DemoController {
 
     @Public()
     @Get('/add')
-    add123(@Query() query) {
+    add123(
+        @Query() query: UserQueryDTO
+    ): Promise<Response>{
         return this.demoServer.add123(query)
     } 
 }

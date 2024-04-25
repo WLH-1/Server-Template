@@ -12,7 +12,9 @@ import Key from './config/env';
 @Module({
   imports: [
     ConfigModule.load(resolve(__dirname, 'config', '**/!(*.d).{ts,js}')),
-    MongooseModule.forRoot(Key.nestDBUrl),
+    MongooseModule.forRoot(Key.nestDBUrl, {
+      retryDelay: 6000, // 设置重试延迟（毫秒）
+    }),
     DemoModule,
     UploadModule,
     ScheduleModule.forRoot(),
