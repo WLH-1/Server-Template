@@ -6,6 +6,8 @@ import { Reflector } from '@nestjs/core';
 
 import { JwtAuthGuard } from './common/guards/auth.guard'
 import Key from './config/env';
+import { TokenGuard } from './common/guards/token.guard';
+import { json } from 'express';
 
 
 async function bootstrap() {
@@ -26,6 +28,9 @@ async function bootstrap() {
   let reflector = new Reflector();
   // 全局使用守卫
   app.useGlobalGuards(new JwtAuthGuard(reflector))
+  app.use(json({ limit: '50mb' }));
+  app.useGlobalGuards(new TokenGuard(reflector));
+
 
   await app.listen(Key.port);
 }

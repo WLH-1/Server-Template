@@ -20,10 +20,12 @@ export class DemoService {
     ) { }
     
     async add123(
-        query: UserQueryDTO
+        query: UserQueryDTO,
+        user: DecodeToken
     ): Promise<Response>  {
-        const {name} = query
-        let list = await this.userModel.find({ name: name });
+        const { name } = query
+        console.log(user);
+        let list = await this.userModel.find({ username: name });
         return this.response.createResponse(
             Code.OK,
             '用户查询成功',

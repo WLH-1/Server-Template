@@ -17,30 +17,8 @@ export class VersionGuard extends AuthGuard('jwt') {
 
   async canActivate(context: ExecutionContext) {
     let headers = context.switchToHttp().getRequest().headers;
-
-    if (
-      headers &&
-      headers['type'] &&
-      headers['version'] &&
-      headers['ischeckversion'] == 'true'
-    ) {
-      let type = headers['type']; //web  app appH5 staff staffH5
-      let version = headers['version'];
-      const options = {
-        uri: `${Key.viewUrl}/hot/api/update/newestVersion`,
-        method: 'GET',
-        qs: { type },
-        json: true,
-      };
-      let res = await rp(options);
-
-      if (Number(res.version) !== Number(version)) {
-        throw new HttpException(
-          { error: { ...res } },
-          HttpStatus.PRECONDITION_FAILED,
-        );
-      }
-    }
+    console.log(headers);
+    
 
     return true;
   }

@@ -1,8 +1,6 @@
-import { Controller, Get, Post, Query, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Query, UseGuards, Request } from '@nestjs/common';
 import { DemoService } from './demo.service';
 
-import { JwtAuthGuard } from '../../common/guards/auth.guard'
-import { query } from 'express';
 
 // 添加自定义元数据标记，表示此路由为公开接口
 import { Public } from 'src/common/decorator/public.decorator';
@@ -27,11 +25,11 @@ export class DemoController {
         return '123'
     }
 
-    @Public()
     @Get('/add')
     add123(
-        @Query() query: UserQueryDTO
+        @Query() query: UserQueryDTO,
+        @Request() { user }: Requestparameter,
     ): Promise<Response>{
-        return this.demoServer.add123(query)
+        return this.demoServer.add123(query, user)
     } 
 }

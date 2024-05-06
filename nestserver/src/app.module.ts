@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
 import { resolve } from 'path';
 import { ConfigModule } from 'nestjs-config';
-import { DemoModule } from './modules/demo/demo.module';
-import { UploadModule } from './modules/upload/upload.module';
+import Key from './config/env';
+import { DemoModule } from './modules/app/demo/demo.module';
+import { UploadModule } from './modules/app/upload/upload.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ScheduleModule } from '@nestjs/schedule';
-import Key from './config/env';
+import { AuthorizationModule } from './modules/app/authorization/authorization.module';
 
 
 
@@ -17,6 +18,7 @@ import Key from './config/env';
     }),
     DemoModule,
     UploadModule,
+    AuthorizationModule,
     ScheduleModule.forRoot(),
   ],
   providers: [],

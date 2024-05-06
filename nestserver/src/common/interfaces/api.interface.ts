@@ -13,16 +13,10 @@ export interface Requestparameter {
   user: DecodeToken;
 }
 export interface Headerparameter {
-  lang: string;
   authorization: string;
-  createdplatform: string;
 }
 
 export interface DecodeToken {
-  isActive: boolean;
-  phone: string;
+  _id:string,
   username: string;
-  name: string;
-  _id: string;
-  currency?: string;
 }
