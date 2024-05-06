@@ -24,14 +24,14 @@ export class DemoService {
         user: DecodeToken
     ): Promise<Response>  {
         const { name } = query
-        console.log(user);
-        let list = await this.userModel.find({ username: name });
+        let list = await this.userModel.find();
+        let total = await this.userModel.countDocuments()
         return this.response.createResponse(
             Code.OK,
             '用户查询成功',
             {
                 data: list,
-                total: list.length
+                total
             },
         ); 
     }
