@@ -25,6 +25,7 @@ export class DemoController {
         return '123'
     }
 
+    @Public()
     @Get('/add')
     add123(
         @Query() query: UserQueryDTO,

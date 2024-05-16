@@ -4,7 +4,7 @@ import { log } from 'console';
 @Injectable()
 export class DemoMiddleware implements NestMiddleware {
   use(req: any, res: any, next: () => void) {
-    console.log('我是demo中间件',new Date());
+    // console.log('我是demo中间件',new Date());
     next();
   }
 }
@@ -12,7 +12,7 @@ export class DemoMiddleware implements NestMiddleware {
 @Injectable()
 export class DemoOtherMiddleware implements NestMiddleware {
   use(req: any, res: any, next: () => void) {
-    console.log('我是demo其他中间件', new Date());
+    // console.log('我是demo其他中间件', new Date());
     next();
   }
 }

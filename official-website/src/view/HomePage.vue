@@ -186,6 +186,12 @@ export default {
           content: "利用干细胞干预痛风的治疗，或有望成为痛风及并发症治疗的新选择。",
           imgTitle: "干细胞干预",
           path: "/stemCellIntervention"
+        },
+        {
+          title: "未来医疗，我们将用细胞治病，而不是药丸！",
+          content: "医学的未来将改变我们治愈疾病的方式。很快我们就会用细胞治疗疾病，而不是药丸。",
+          imgTitle: "细胞疗法",
+          path: "/cellTherapy"
         }
       ],
       industryTrends: [

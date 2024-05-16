@@ -4,7 +4,7 @@ module.exports = {
   jwtSecret: "koaServer-test",
   DBUrl: "mongodb+srv://admin:admin123@work.zlmrxot.mongodb.net/work",
   redisOption: {
-    host: "172.21.8.80",
+    host: "47.109.159.242",
     port: 6379,
   },
 };

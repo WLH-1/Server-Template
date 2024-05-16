@@ -304,6 +304,15 @@ export default new Router({
           meta: {
             title: "干细胞干预"
           }
+        },
+        {
+          path: "/cellTherapy",
+          name: "cellTherapy",
+          component: resolve =>
+            require(["@/view/articlesAndIndustryUpdates/cellTherapy"], resolve),
+          meta: {
+            title: "细胞疗法"
+          }
         }
         // 
       ]
