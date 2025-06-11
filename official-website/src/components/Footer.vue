@@ -25,7 +25,7 @@
       <div class="flex_tb" style="margin-left: 32px;">
         <p class="" style="font-size: 18px;">联系我们</p>
         <p class="address_tel_fax">
-          <span>地址：中国（四川）自由贸易试验区成都高新区天府三街69号1栋19层1920号</span>
+          <span>地址：中国（四川）成都东部新区养马街道石养路2号7栋（属简州新城范围内）</span>
         </p>
 
         <p class="address_tel_fax">
@@ -52,7 +52,7 @@
       <p class="flex_tb_c" style="font-size: 18px;padding: 0 20px;margin-top: 20px;">联系我们</p>
       <div class="flex_tb" style="">
         <p class="copy">
-          地址：中国（四川）自由贸易试验区成都高新区天府三街69号1栋19层1920号
+          地址：中国（四川）成都东部新区养马街道石养路2号7栋（属简州新城范围内）
         </p>
         <p class="copy">
           邮箱：huangqy_ql@sina.com
