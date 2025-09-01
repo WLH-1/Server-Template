@@ -27,20 +27,16 @@
         <p class="address_tel_fax">
           <span>地址：中国（四川）成都东部新区养马街道石养路2号7栋（属简州新城范围内）</span>
         </p>
-
         <p class="address_tel_fax">
           <span>邮箱：huangqy_ql@sina.com</span>
         </p>
         <p class="address_tel_fax">
           <span>微信号：think-more-see-all</span>
         </p>
-        <p class="address_tel_fax">
-          <span class="copy">Copyright &copy; 2021 - {{ new Date().getFullYear() }} 成都启林未来科技有限公司
-          </span>
-          <span style="padding: 0 5px;"> | </span>
-          <span>
-            <a href="https://beian.miit.gov.cn" style="color: #d3d3d3;">蜀ICP备2024067583号-1</a>
-          </span>
+        <p class="address_tel_fax copyright-line">
+          <span class="copy">Copyright &copy; 2021 - {{ new Date().getFullYear() }} 成都启林未来科技有限公司</span>
+          <span class="copy">|</span>
+          <a href="https://beian.miit.gov.cn" class="copy">蜀ICP备2024067583号-1</a>
         </p>
       </div>
     </div>
@@ -60,9 +56,11 @@
         <p class="copy">
           微信号：think-more-see-all
         </p>
-        <p class="copy">Copyright &copy; 2021 - {{ new Date().getFullYear() }} 成都启林未来科技有限公司
+        <p class="copy copyright-line">
+          <span>Copyright &copy; 2021 - {{ new Date().getFullYear() }} 成都启林未来科技有限公司</span>
+          <span class="copy">|</span>
+          <a href="https://beian.miit.gov.cn" class="copy">蜀ICP备2024067583号-1</a>
         </p>
-         <a href="https://beian.miit.gov.cn" style="color: #d3d3d3;">蜀ICP备2024067583号-1</a>
       </div>
     </div>
   </div>
@@ -157,23 +155,36 @@ export default {
 <style scoped>
 #footer {
   width: 100%;
-  height: 100%;
   color: #fff;
   background: #474747;
   overflow: hidden;
   text-align: center;
   flex-shrink: 0;
-  padding: 32px;
+  padding: 40px 0;
 }
 
 #footer .footer-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   padding: 0 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#footer .footer-container .image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 #footer .footer-container .image>img {
-  height: 50px;
+  height: 45px;
+  transition: transform 0.3s ease;
+}
+
+#footer .footer-container .image>img:hover {
+  transform: scale(1.05);
 }
 
 .flex_tb_c {
@@ -185,8 +196,9 @@ export default {
 
 .flex_tb {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
+  gap: 10px;
 }
 
 .logo {
@@ -197,109 +209,129 @@ export default {
 .title {
   font-size: 25px;
   margin-bottom: 20px;
+  color: #fff;
+  font-weight: bold;
 }
 
 .address_tel_fax {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   color: #d3d3d3;
   font-size: 14px;
   width: max-content;
+  transition: color 0.3s ease;
+}
+
+.address_tel_fax:hover {
+  color: #fff;
 }
 
 .copy {
   color: #d3d3d3;
   font-size: 14px;
+  margin-top: 15px;
+}
+
+.copy a {
+  color: #d3d3d3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.copy a:hover {
+  color: #fff;
+}
+
+.copyright-line {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 5px !important;
+  white-space: nowrap !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+}
+
+.copyright-line .copy {
+  white-space: nowrap !important;
+  display: inline-block !important;
+}
+
+.separator {
+  color: #d3d3d3;
+  margin: 0 5px;
+  white-space: nowrap !important;
+}
+
+.icp-link {
+  color: #d3d3d3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap !important;
+  display: inline-block !important;
+}
+
+.icp-link:hover {
+  color: #fff;
 }
 
 @media screen and (min-width: 768px) and (max-width: 997px) {
   #footer .footer-container {
-    display: flex;
-    justify-content: center;
-    padding: 0 100px;
+    padding: 0 50px;
   }
 
   #footer .footer-container .image>img {
     height: 40px;
   }
 
-  .flex_tb_c {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .flex_tb {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-  }
-
-  .logo {
-    width: 95px;
-    height: 45px;
-  }
-
-  .title {
-    font-size: 25px;
-    margin-bottom: 20px;
-  }
-
   .address_tel_fax {
-    color: #d3d3d3;
-    font-size: 11px;
-    width: max-content;
-  }
-
-  .copy {
-    color: #d3d3d3;
-    font-size: 11px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #footer .footer-container-m {
-    display: flex;
-    justify-content: center;
-  }
-
-  #footer .footer-container-m .image>img {
-    height: 40px;
-  }
-
-  .flex_tb_c {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .flex_tb {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-  }
-
-  .logo {
-    width: 95px;
-    height: 45px;
-  }
-
-  .title {
-    font-size: 25px;
-    margin-bottom: 20px;
-  }
-
-  .address_tel_fax {
-    color: #d3d3d3;
     font-size: 12px;
   }
 
   .copy {
-    color: #d3d3d3;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #footer {
+    padding: 25px 0;
+  }
+
+  #footer .footer-container-m {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  #footer .footer-container-m .image {
+    gap: 15px;
+  }
+
+  #footer .footer-container-m .image>img {
+    height: 35px;
+  }
+
+  .flex_tb {
+    align-items: center;
+    text-align: center;
+  }
+
+  .address_tel_fax {
+    justify-content: center;
     font-size: 13px;
-    text-align: left;
+  }
+
+  .copy {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .copyright-line {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 </style>

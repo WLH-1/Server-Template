@@ -1,0 +1,4 @@
+APP_ENV=pro
+MONGO_URI=mongodb://192.168.6.38:27018,192.168.6.38:27019,192.168.6.38:27020/?
+CORE_URI=https://www.ebuysgp.com
+PORT=3001
