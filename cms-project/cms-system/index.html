@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章管理系统CMS</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <div class="container">
+            <!-- 侧边栏 -->
+            <div class="sidebar">
+                <div class="logo">
+                    <h1>CMS管理系统</h1>
+                </div>
+                <ul class="menu">
+                    <li class="active"><span>📝</span> 文章管理</li>
+                </ul>
+            </div>
+
+            <!-- 主内容区域 -->
+            <div class="main-content">
+                <div class="header">
+                    <h2>文章管理系统</h2>
+                    <div class="actions">
+                        <button class="btn-new" @click="createNewArticle">新建文章</button>
+                        <button class="btn-preview" @click="showPreview">预览</button>
+                        <button class="btn-generate" @click="generateHTML">生成HTML</button>
+                        <button class="btn-save" @click="saveArticle">保存文章</button>
+                    </div>
+                </div>
+
+                <div class="content-area">
+                    <!-- 文章列表区域 -->
+                    <div class="articles-panel">
+                        <h2>
+                            文章列表
+                            <span class="articles-count">共{{ pagesTotal }}篇文章</span>
+                        </h2>
+
+                        <div class="search-box">
+                            <input type="text" placeholder="搜索文章标题" v-model="searchText" @keyup.enter="filterArticles">
+                            <button @click="filterArticles">搜索</button>
+                        </div>
+
+                        <div class="filter-options">
+                            <select v-model="categoryFilter" @change="filterArticles">
+                                <option value="">所有分类</option>
+                                <option v-for="(name, value) in categories" :value="value">{{ name }}</option>
+                            </select>
+
+                            <select v-model="statusFilter" @change="filterArticles">
+                                <option value="">所有状态</option>
+                                <option v-for="(name, value) in statuses" :value="value">{{ name }}</option>
+                            </select>
+                        </div>
+
+                        <div class="articles-list">
+                            <div v-for="article in articles" :key="article._id"
+                                :class="['article-item', { active: currentArticle._id === article._id }]"
+                                @click="loadArticle(article._id)">
+                                <span :class="['article-status', `status-${article.status}`]">
+                                    {{ statuses[article.status] }}
+                                </span>
+                                <div class="article-title">
+                                    {{ article.title }}
+                                </div>
+                                <div class="article-meta">
+                                    <span>{{ categories[article.category] || '未分类' }}</span>
+                                    <span>{{ formatDate(article.lastSaved) }}</span>
+                                </div>
+                                <div class="article-excerpt">{{ getExcerpt(article.content) }}</div>
+                                    <!-- 新增 URL 区域 -->
+                                    <div class="article-url">
+                                        <input type="text" :value="article.slug || ''" readonly ref="urlInput" />
+                                        <button @click.stop="copyUrl(article.slug)">复制</button>
+                                    </div>
+
+                            </div>
+                            <div v-if="filteredArticles.length === 0" class="article-item">
+                                没有找到匹配的文章
+                            </div>
+                        </div>
+                        <div class="pagination">
+                            <button @click="toGetListCut" :disabled="currentPage === 1">上一页</button>
+                            <span>第 {{ currentPage }} / {{ totalPages }} 页</span>
+                            <button @click="toGetListAdd" :disabled="currentPage === totalPages">下一页</button>
+                        </div>
+                    </div>
+
+                    <!-- 文章编辑区域 -->
+                    <div class="editor-panel">
+                        <h2>编辑文章: {{ currentArticle.title.substring(0, 20) }}{{ currentArticle.title.length > 20 ? '...'
+                            : '' }}</h2>
+                        <div class="form-group">
+                            <label for="article-title">文章标题</label>
+                            <input type="text" id="article-title" v-model="currentArticle.title" placeholder="请输入文章标题">
+                        </div>
+                        <div class="form-group">
+                            <label for="article-category">文章分类</label>
+                            <select id="article-category" v-model="currentArticle.category">
+                                <option value="">选择分类</option>
+                                <option v-for="(name, value) in categories" :value="value">{{ name }}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="article-status">文章状态</label>
+                            <select id="article-status" v-model="currentArticle.status">
+                                <option v-for="(name, value) in statuses" :value="value">{{ name }}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="article-content">文章内容</label>
+                            <div class="editor-toolbar">
+                                <button type="button" title="加粗" @click="formatText('bold')">B</button>
+                                <button type="button" title="斜体" @click="formatText('italic')">I</button>
+                                <button type="button" title="链接" @click="insertLink">🔗</button>
+                                <button type="button" title="图片" @click="insertImage">🖼️</button>
+                            </div>
+                            <div class="editor" contenteditable="true" @input="updateContent">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- SEO 配置区域 -->
+                    <div class="articles-panel">
+                        <h2>
+                            SEO配置
+                            <!-- 默认 SEO 设置按钮 -->
+                            <button class="btn-default-seo" @click="showDefaultSeoModal = true">配置默认 SEO</button>
+                        </h2>
+
+                        <div class="form-group">
+                            <label for="seo-title">SEO 标题</label>
+                            <input type="text" id="seo-title" v-model="currentArticle.seoTitle" placeholder="文章 SEO 标题">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="seo-description">SEO 描述</label>
+                            <textarea id="seo-description" v-model="currentArticle.seoDescription"
+                                placeholder="文章 SEO 描述，建议 150 字以内"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="seo-keywords">SEO 关键字</label>
+                            <input type="text" id="seo-keywords" v-model="currentArticle.seoKeywords"
+                                placeholder="文章 SEO 关键字，用逗号分隔">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="status-bar">
+                    <div class="status-info">
+                        <span>最后保存: {{ formatDate(currentArticle.updatedAt) }}</span>
+                        <span>状态: {{ statuses[currentArticle.status] }}</span>
+                    </div>
+                    <div class="status-actions">
+                        <span>字数: {{ wordCount }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 预览模态框 -->
+        <div :class="['preview-modal', { show: showPreviewModal }]" @click.self="showPreviewModal = false">
+            <div class="preview-content">
+                <div class="preview-header">
+                    <h3>文章预览 - {{ currentArticle.title }}</h3>
+                    <button class="close-preview" @click="showPreviewModal = false">关闭预览</button>
+                </div>
+                <iframe class="preview-iframe" :srcdoc="previewHTML"></iframe>
+            </div>
+        </div>
+        <!-- 加载动画 -->
+        <div v-if="isLoading" class="loading-overlay">
+            <div class="spinner"></div>
+        </div>
+        <!-- 默认 SEO 弹窗 -->
+        <div v-if="showDefaultSeoModal" class="modal-overlay" @click.self="showDefaultSeoModal = false">
+            <div class="modal-content">
+                <h3>配置默认 SEO</h3>
+                <div class="form-group">
+                    <label>默认 SEO 标题</label>
+                    <input type="text" v-model="defaultSeo.seoTitle" placeholder="默认 SEO 标题">
+                </div>
+                <div class="form-group">
+                    <label>默认 SEO 描述</label>
+                    <textarea v-model="defaultSeo.seoDescription" placeholder="文章 SEO 描述，建议 150 字以内"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>默认 SEO 关键字</label>
+                    <input type="text" v-model="defaultSeo.seoKeywords" placeholder="默认 SEO 关键字，用逗号分隔">
+                </div>
+                <div class="modal-actions">
+                    <button @click="saveDefaultSeo">保存</button>
+                    <button @click="showDefaultSeoModal = false">取消</button>
+                </div>
+            </div>
+        </div>
+        <!-- 图片上传弹窗 -->
+        <div v-if="showImageModal" class="image-upload-dialog" @click.self="showImageModal = false">
+            <div class="image-upload-dialog__content">
+                <h3>上传图片</h3>
+                <input type="file" @change="handleFileChange" accept="image/*" />
+                <div class="image-upload-dialog__actions">
+                    <button @click="uploadImage" :disabled="!selectedFile">上传</button>
+                    <button @click="showImageModal = false">取消</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="scripts/app.js"></script>
+</body>
+
+</html>
